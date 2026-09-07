@@ -14,7 +14,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-TODAY = datetime(2026, 9, 7, tzinfo=timezone.utc)
+TODAY = datetime.now(timezone.utc)
 
 CATEGORY_BUCKETS = {
     "high": {

@@ -37,6 +37,20 @@ def fmt_money(n):
         return "-"
 
 
+def rank_tier(r: int) -> str:
+    if r >= 7:
+        return "hi"
+    if r >= 4:
+        return "mid"
+    return "lo"
+
+
+def status_pill(is_true: bool, label_yes: str, label_no: str) -> str:
+    cls = "yes" if is_true else "no"
+    label = label_yes if is_true else label_no
+    return f'<span class="pill pill-{cls}"><i class="dot"></i>{label}</span>'
+
+
 def channel_row_html(ch: dict) -> str:
     name = html.escape(ch.get("name", "?"))
     url = html.escape(ch.get("url", "#"))
@@ -47,19 +61,19 @@ def channel_row_html(ch: dict) -> str:
     rev_max = ch.get("est_revenue_max_usd", 0)
     ranking = ch.get("ranking", 0)
     ratio = ch.get("views_subscribers_ratio", 0)
-    monetized = "Si" if ch.get("is_monetized") else "No"
-    external = "Si" if ch.get("external_monetization_signals") else "No"
+    monetized = status_pill(bool(ch.get("is_monetized")), "Sí", "No")
+    external = status_pill(bool(ch.get("external_monetization_signals")), "Sí", "No")
 
     return f"""<tr>
-<td><a href="{url}" target="_blank" rel="noopener">{name}</a></td>
-<td data-sort="{days}">{fmt_int(days)}</td>
-<td data-sort="{views30}">{fmt_int(views30)}</td>
-<td data-sort="{subs}">{fmt_int(subs)}</td>
-<td data-sort="{ratio}">{ratio:.1f}</td>
-<td data-sort="{rev_min}">{fmt_money(rev_min)} - {fmt_money(rev_max)} <span class="tag">estimado</span></td>
+<td class="col-name"><a href="{url}" target="_blank" rel="noopener">{name}</a></td>
+<td class="num" data-sort="{days}">{fmt_int(days)}</td>
+<td class="num" data-sort="{views30}">{fmt_int(views30)}</td>
+<td class="num" data-sort="{subs}">{fmt_int(subs)}</td>
+<td class="num" data-sort="{ratio}">{ratio:.1f}×</td>
+<td class="num col-rev" data-sort="{rev_min}">{fmt_money(rev_min)}–{fmt_money(rev_max)}<span class="tag">estimado</span></td>
 <td>{monetized}</td>
 <td>{external}</td>
-<td data-sort="{ranking}" class="rank rank-{ranking}">{ranking}</td>
+<td class="num" data-sort="{ranking}"><span class="rankpill rank-{rank_tier(ranking)}">{ranking}</span></td>
 </tr>"""
 
 
@@ -68,13 +82,13 @@ def section_table_html(section_id: str, title: str, channels: list, criteria_des
     return f"""
 <section id="panel-{section_id}" class="tabpanel" role="tabpanel" aria-labelledby="tab-{section_id}" hidden>
   <p class="criteria">{html.escape(criteria_desc)}</p>
-  <p class="count">Canales: <strong class="count-num">{len(channels)}</strong></p>
+  <p class="count">Canales en esta sección: <strong class="count-num">{len(channels)}</strong></p>
   <div class="table-wrap">
   <table data-section="{section_id}">
     <thead>
       <tr>
         <th data-key="name">Canal</th>
-        <th data-key="days" class="num">Dias</th>
+        <th data-key="days" class="num">Días</th>
         <th data-key="views" class="num">Vistas 30d</th>
         <th data-key="subs" class="num">Subs</th>
         <th data-key="ratio" class="num">Ratio V/S</th>
@@ -132,57 +146,158 @@ TEMPLATE = """<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dashboard Nichos YouTube Faceless</title>
+<title>Radar Faceless</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <style>
 :root {{
-  --bg: #0b0d12; --panel: #12151c; --border: #232838; --text: #e6e9f0;
-  --muted: #8891a7; --accent: #5b8cff; --good: #35c88a; --warn: #f2b84b;
+  --bg: #F5F7F4;
+  --surface: #FFFFFF;
+  --surface-alt: #ECF1EB;
+  --border: #D8E0D6;
+  --text: #12211B;
+  --text-muted: #5B6E63;
+  --accent: #A85A18;
+  --accent-soft: #F1E1C6;
+  --good: #2E7D4F;
+  --good-soft: #DCEEE0;
+  --mid: #A85A18;
+  --mid-soft: #F1E1C6;
+  --lo-soft: #E7E9E4;
+  --focus: #2E7D4F;
+}}
+@media (prefers-color-scheme: dark) {{
+  :root:not([data-theme="light"]) {{
+    --bg: #0E1613;
+    --surface: #162019;
+    --surface-alt: #1B2620;
+    --border: #2A3A31;
+    --text: #E7EFE8;
+    --text-muted: #93A89B;
+    --accent: #E3A057;
+    --accent-soft: #3A2C18;
+    --good: #4FBE7C;
+    --good-soft: #17331F;
+    --mid: #E3A057;
+    --mid-soft: #3A2C18;
+    --lo-soft: #212D26;
+  }}
+}}
+:root[data-theme="dark"] {{
+  --bg: #0E1613;
+  --surface: #162019;
+  --surface-alt: #1B2620;
+  --border: #2A3A31;
+  --text: #E7EFE8;
+  --text-muted: #93A89B;
+  --accent: #E3A057;
+  --accent-soft: #3A2C18;
+  --good: #4FBE7C;
+  --good-soft: #17331F;
+  --mid: #E3A057;
+  --mid-soft: #3A2C18;
+  --lo-soft: #212D26;
 }}
 * {{ box-sizing: border-box; }}
-body {{ margin:0; background:var(--bg); color:var(--text); font-family: -apple-system, Segoe UI, Roboto, Arial, sans-serif; }}
-header {{ padding: 20px 24px 8px; }}
-h1 {{ margin: 0 0 4px; font-size: 20px; }}
-.meta {{ color: var(--muted); font-size: 13px; }}
-.controls {{ display:flex; gap:12px; align-items:center; padding: 12px 24px; flex-wrap: wrap; }}
-.controls label {{ font-size: 13px; color: var(--muted); }}
-.controls input {{ background: var(--panel); border:1px solid var(--border); color:var(--text); padding:6px 10px; border-radius:6px; width:70px; }}
-.tabs {{ display:flex; gap:6px; padding: 0 24px; border-bottom:1px solid var(--border); flex-wrap:wrap; }}
-.tab {{ background:transparent; border:none; color:var(--muted); padding:10px 14px; cursor:pointer; font-size:14px; border-bottom:2px solid transparent; }}
-.tab[aria-selected="true"] {{ color:var(--text); border-bottom-color:var(--accent); }}
-.badge {{ background:var(--border); color:var(--muted); border-radius:10px; padding:1px 7px; font-size:11px; margin-left:4px; }}
-.tabpanel {{ padding: 16px 24px 40px; }}
-.criteria {{ color: var(--muted); font-size: 13px; margin: 4px 0 10px; }}
-.count {{ font-size: 13px; color: var(--muted); margin-bottom: 10px; }}
-.table-wrap {{ overflow-x: auto; border:1px solid var(--border); border-radius:8px; }}
-table {{ border-collapse: collapse; width: 100%; min-width: 900px; font-size: 13px; }}
-thead th {{ text-align:left; background: var(--panel); color: var(--muted); font-weight:600; padding:10px 12px; cursor:pointer; white-space:nowrap; position: sticky; top:0; }}
-thead th.num {{ text-align:right; }}
+body {{
+  margin: 0; background: var(--bg); color: var(--text);
+  font-family: "Public Sans", -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}}
+.mono {{ font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; }}
+header {{ padding: 28px 28px 18px; border-bottom: 1px solid var(--border); }}
+.eyebrow {{
+  font-family: "IBM Plex Mono", monospace; font-size: 11px; font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin: 0 0 8px;
+}}
+h1 {{ margin: 0 0 6px; font-size: 26px; font-weight: 800; letter-spacing: -0.01em; text-wrap: balance; }}
+.meta {{ color: var(--text-muted); font-size: 13px; }}
+.meta .sep {{ margin: 0 8px; opacity: 0.5; }}
+.controls {{
+  display: flex; gap: 14px; align-items: center; padding: 16px 28px;
+  border-bottom: 1px solid var(--border); flex-wrap: wrap; background: var(--surface-alt);
+}}
+.controls label {{ font-size: 12px; color: var(--text-muted); font-weight: 600; }}
+.controls .field {{ display: flex; align-items: center; gap: 8px; }}
+.controls input {{
+  background: var(--surface); border: 1px solid var(--border); color: var(--text);
+  padding: 6px 10px; border-radius: 6px; width: 64px; font-size: 13px; font-family: inherit;
+}}
+.controls input:focus-visible {{ outline: 2px solid var(--focus); outline-offset: 1px; }}
+.controls .hint {{ font-size: 12px; color: var(--text-muted); }}
+.tabs {{ display: flex; gap: 4px; padding: 0 28px; border-bottom: 1px solid var(--border); flex-wrap: wrap; background: var(--surface); }}
+.tab {{
+  background: transparent; border: none; color: var(--text-muted); padding: 13px 16px;
+  cursor: pointer; font-size: 14px; font-weight: 600; font-family: inherit;
+  border-bottom: 2px solid transparent; display: flex; align-items: center; gap: 7px;
+}}
+.tab:hover {{ color: var(--text); }}
+.tab[aria-selected="true"] {{ color: var(--text); border-bottom-color: var(--accent); }}
+.tab:focus-visible {{ outline: 2px solid var(--focus); outline-offset: -2px; }}
+.badge {{
+  background: var(--surface-alt); color: var(--text-muted); border: 1px solid var(--border);
+  border-radius: 999px; padding: 1px 8px; font-size: 11px; font-family: "IBM Plex Mono", monospace;
+}}
+.tab[aria-selected="true"] .badge {{ color: var(--accent); border-color: var(--accent-soft); background: var(--accent-soft); }}
+.tabpanel {{ padding: 20px 28px 44px; }}
+.criteria {{ color: var(--text-muted); font-size: 13px; margin: 0 0 4px; }}
+.count {{ font-size: 12px; color: var(--text-muted); margin: 0 0 14px; font-family: "IBM Plex Mono", monospace; }}
+.count strong {{ color: var(--text); }}
+.table-wrap {{ overflow-x: auto; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); }}
+table {{ border-collapse: collapse; width: 100%; min-width: 920px; font-size: 13px; }}
+thead th {{
+  text-align: left; background: var(--surface-alt); color: var(--text-muted); font-weight: 600;
+  font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase;
+  padding: 11px 14px; cursor: pointer; white-space: nowrap; position: sticky; top: 0;
+  border-bottom: 1px solid var(--border); user-select: none;
+}}
+thead th.num {{ text-align: right; }}
 thead th:hover {{ color: var(--text); }}
-tbody td {{ padding:9px 12px; border-top:1px solid var(--border); white-space:nowrap; }}
-tbody td:nth-child(n+2) {{ text-align:right; }}
-tbody tr:hover {{ background: rgba(255,255,255,0.03); }}
-a {{ color: var(--accent); text-decoration:none; }}
-a:hover {{ text-decoration:underline; }}
-.tag {{ color: var(--warn); font-size:10px; border:1px solid var(--warn); border-radius:4px; padding:1px 4px; margin-left:4px; }}
-.rank {{ font-weight:700; }}
-.rank-9, .rank-10 {{ color: var(--good); }}
-.rank-1, .rank-2, .rank-3 {{ color: var(--muted); }}
-tr.hidden-by-filter {{ display:none; }}
+thead th:focus-visible {{ outline: 2px solid var(--focus); outline-offset: -2px; }}
+tbody td {{ padding: 10px 14px; border-top: 1px solid var(--border); white-space: nowrap; font-variant-numeric: tabular-nums; }}
+tbody td.num {{ text-align: right; font-family: "IBM Plex Mono", monospace; }}
+tbody td.col-name {{ font-weight: 600; }}
+tbody tr:hover {{ background: var(--surface-alt); }}
+a {{ color: var(--accent); text-decoration: none; }}
+a:hover {{ text-decoration: underline; }}
+.tag {{
+  color: var(--text-muted); font-size: 9.5px; font-family: "IBM Plex Mono", monospace;
+  border: 1px solid var(--border); border-radius: 4px; padding: 1px 4px; margin-left: 6px;
+  text-transform: uppercase; letter-spacing: 0.04em;
+}}
+.rankpill {{
+  display: inline-block; min-width: 26px; text-align: center; font-weight: 700;
+  font-family: "IBM Plex Mono", monospace; border-radius: 6px; padding: 2px 7px; font-size: 12.5px;
+}}
+.rankpill.rank-hi {{ background: var(--good-soft); color: var(--good); }}
+.rankpill.rank-mid {{ background: var(--mid-soft); color: var(--mid); }}
+.rankpill.rank-lo {{ background: var(--lo-soft); color: var(--text-muted); }}
+.pill {{ display: inline-flex; align-items: center; gap: 5px; font-size: 12.5px; color: var(--text-muted); }}
+.pill .dot {{ width: 6px; height: 6px; border-radius: 50%; background: var(--border); display: inline-block; }}
+.pill-yes .dot {{ background: var(--good); }}
+.pill-yes {{ color: var(--text); }}
+tr.hidden-by-filter {{ display: none; }}
+footer {{ padding: 18px 28px 32px; color: var(--text-muted); font-size: 12px; }}
 </style>
 </head>
 <body>
 <header>
-  <h1>Dashboard de Nichos YouTube Faceless</h1>
-  <div class="meta">Generado: {generated_at} - Fuente: Nexlev MCP - Ingresos siempre etiquetados como estimados</div>
+  <p class="eyebrow">Nexlev · Investigación de nichos</p>
+  <h1>Radar Faceless</h1>
+  <div class="meta mono">Generado {generated_at}<span class="sep">·</span>Ingresos siempre etiquetados como estimados</div>
 </header>
 <div class="controls">
-  <label for="minRank">Ranking minimo</label>
-  <input type="number" id="minRank" min="1" max="10" value="1">
+  <div class="field">
+    <label for="minRank">Ranking mínimo</label>
+    <input type="number" id="minRank" min="1" max="10" value="1">
+  </div>
+  <span class="hint">Filtra las 4 pestañas a la vez · haz clic en una cabecera de columna para ordenar</span>
 </div>
 <div class="tabs" role="tablist">
 {tabs}
 </div>
 {panels}
+<footer class="mono">Datos vía Nexlev MCP (search_niche_finder_channels, get_channel_analytics, get_daily_analytics, check_faceless_channel, check_channel_monetization, get_channel_promotions)</footer>
 <script>
 (function() {{
   var tabs = document.querySelectorAll('.tab');
