@@ -1,0 +1,742 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard Nichos YouTube Faceless</title>
+<style>
+:root {
+  --bg: #0b0d12; --panel: #12151c; --border: #232838; --text: #e6e9f0;
+  --muted: #8891a7; --accent: #5b8cff; --good: #35c88a; --warn: #f2b84b;
+}
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family: -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+header { padding: 20px 24px 8px; }
+h1 { margin: 0 0 4px; font-size: 20px; }
+.meta { color: var(--muted); font-size: 13px; }
+.controls { display:flex; gap:12px; align-items:center; padding: 12px 24px; flex-wrap: wrap; }
+.controls label { font-size: 13px; color: var(--muted); }
+.controls input { background: var(--panel); border:1px solid var(--border); color:var(--text); padding:6px 10px; border-radius:6px; width:70px; }
+.tabs { display:flex; gap:6px; padding: 0 24px; border-bottom:1px solid var(--border); flex-wrap:wrap; }
+.tab { background:transparent; border:none; color:var(--muted); padding:10px 14px; cursor:pointer; font-size:14px; border-bottom:2px solid transparent; }
+.tab[aria-selected="true"] { color:var(--text); border-bottom-color:var(--accent); }
+.badge { background:var(--border); color:var(--muted); border-radius:10px; padding:1px 7px; font-size:11px; margin-left:4px; }
+.tabpanel { padding: 16px 24px 40px; }
+.criteria { color: var(--muted); font-size: 13px; margin: 4px 0 10px; }
+.count { font-size: 13px; color: var(--muted); margin-bottom: 10px; }
+.table-wrap { overflow-x: auto; border:1px solid var(--border); border-radius:8px; }
+table { border-collapse: collapse; width: 100%; min-width: 900px; font-size: 13px; }
+thead th { text-align:left; background: var(--panel); color: var(--muted); font-weight:600; padding:10px 12px; cursor:pointer; white-space:nowrap; position: sticky; top:0; }
+thead th.num { text-align:right; }
+thead th:hover { color: var(--text); }
+tbody td { padding:9px 12px; border-top:1px solid var(--border); white-space:nowrap; }
+tbody td:nth-child(n+2) { text-align:right; }
+tbody tr:hover { background: rgba(255,255,255,0.03); }
+a { color: var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; }
+.tag { color: var(--warn); font-size:10px; border:1px solid var(--warn); border-radius:4px; padding:1px 4px; margin-left:4px; }
+.rank { font-weight:700; }
+.rank-9, .rank-10 { color: var(--good); }
+.rank-1, .rank-2, .rank-3 { color: var(--muted); }
+tr.hidden-by-filter { display:none; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Dashboard de Nichos YouTube Faceless</h1>
+  <div class="meta">Generado: 2026-09-07T16:32:27.586525+00:00 - Fuente: Nexlev MCP - Ingresos siempre etiquetados como estimados</div>
+</header>
+<div class="controls">
+  <label for="minRank">Ranking minimo</label>
+  <input type="number" id="minRank" min="1" max="10" value="1">
+</div>
+<div class="tabs" role="tablist">
+<button class="tab" id="tab-ia_nichos" role="tab" aria-selected="true" aria-controls="panel-ia_nichos" data-target="ia_nichos">Nichos IA <span class="badge">12</span></button>
+<button class="tab" id="tab-long_form" role="tab" aria-selected="false" aria-controls="panel-long_form" data-target="long_form">Long Form <span class="badge">12</span></button>
+<button class="tab" id="tab-faceless_nuevos" role="tab" aria-selected="false" aria-controls="panel-faceless_nuevos" data-target="faceless_nuevos">YouTube Faceless (nuevos) <span class="badge">12</span></button>
+<button class="tab" id="tab-faceless_establecidos" role="tab" aria-selected="false" aria-controls="panel-faceless_establecidos" data-target="faceless_establecidos">YouTube Faceless (establecidos) <span class="badge">12</span></button>
+</div>
+
+<section id="panel-ia_nichos" class="tabpanel" role="tabpanel" aria-labelledby="tab-ia_nichos" hidden>
+  <p class="criteria">Duracion media 10-45 min - &gt;=500.000 vistas/30d - canal &lt;=90 dias - senales de produccion por IA</p>
+  <p class="count">Canales: <strong class="count-num">12</strong></p>
+  <div class="table-wrap">
+  <table data-section="ia_nichos">
+    <thead>
+      <tr>
+        <th data-key="name">Canal</th>
+        <th data-key="days" class="num">Dias</th>
+        <th data-key="views" class="num">Vistas 30d</th>
+        <th data-key="subs" class="num">Subs</th>
+        <th data-key="ratio" class="num">Ratio V/S</th>
+        <th data-key="revenue" class="num">Ingresos est.</th>
+        <th data-key="monetized">Monetiza</th>
+        <th data-key="external">Ingr. externos</th>
+        <th data-key="rank" class="num">Ranking</th>
+      </tr>
+    </thead>
+    <tbody>
+<tr>
+<td><a href="https://www.youtube.com/channel/UCsYEZah0zh0XCIaOHrkh93Q" target="_blank" rel="noopener">Wild Bird Survival</a></td>
+<td data-sort="81">81</td>
+<td data-sort="12274809">12.274.809</td>
+<td data-sort="31500">31.500</td>
+<td data-sort="389.68">389.7</td>
+<td data-sort="24550">$24.550 - $73.649 <span class="tag">estimado</span></td>
+<td>No</td>
+<td>No</td>
+<td data-sort="7" class="rank rank-7">7</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/channel/UCB9DLOcuJr1cCcuEylZ23cw" target="_blank" rel="noopener">Encore Transformations</a></td>
+<td data-sort="56">56</td>
+<td data-sort="2040194">2.040.194</td>
+<td data-sort="1350">1.350</td>
+<td data-sort="1511.25">1511.2</td>
+<td data-sort="4080">$4.080 - $12.241 <span class="tag">estimado</span></td>
+<td>Si</td>
+<td>Si</td>
+<td data-sort="6" class="rank rank-6">6</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/channel/UCwC68CcfhN5dT0JvZ-wRRCw" target="_blank" rel="noopener">Military Valen</a></td>
+<td data-sort="48">48</td>
+<td data-sort="606243">606.243</td>
+<td data-sort="1000">1.000</td>
+<td data-sort="606.24">606.2</td>
+<td data-sort="1212">$1.212 - $3.637 <span class="tag">estimado</span></td>
+<td>No</td>
+<td>No</td>
+<td data-sort="4" class="rank rank-4">4</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/channel/UCQcBYZxFW7YwNMU8-DsT3Uw" target="_blank" rel="noopener">Dr. Elias Senior Health </a></td>
+<td data-sort="63">63</td>
+<td data-sort="2939822">2.939.822</td>
+<td data-sort="34900">34.900</td>
+<td data-sort="84.24">84.2</td>
+<td data-sort="23519">$23.519 - $73.496 <span class="tag">estimado</span></td>
+<td>Si</td>
+<td>No</td>
+<td data-sort="4" class="rank rank-4">4</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/channel/UCA0G9KHAh1TnRwt6t7GhEfw" target="_blank" rel="noopener">Haalandians</a></td>
+<td data-sort="83">83</td>
+<td data-sort="875690">875.690</td>
+<td data-sort="1140">1.140</td>
+<td data-sort="768.15">768.1</td>
+<td data-sort="1751">$1.751 - $5.254 <span class="tag">estimado</span></td>
+<td>Si</td>
+<td>No</td>
+<td data-sort="4" class="rank rank-4">4</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/channel/UCgX6ttzPIHKjW6IVxVAcT4w" target="_blank" rel="noopener">Jiang Exclusive</a></td>
+<td data-sort="30">30</td>
+<td data-sort="2568864">2.568.864</td>
+<td data-sort="35100">35.100</td>
+<td data-sort="73.19">73.2</td>
+<td data-sort="20551">$20.551 - $64.222 <span class="tag">estimado</span></td>
+<td>No</td>
+<td>Si</td>
+<td data-sort="4" class="rank rank-4">4</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/channel/UCv1tvykJNcr7zGuJSCKPh_w" target="_blank" rel="noopener">Earth Archive</a></td>
+<td data-sort="79">79</td>
+<td data-sort="539022">539.022</td>
+<td data-sort="3150">3.150</td>
+<td data-sort="171.12">171.1</td>
+<td data-sort="1078">$1.078 - $3.234 <span class="tag">estimado</span></td>
+<td>No</td>
+<td>No</td>
+<td data-sort="3" class="rank rank-3">3</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/channel/UC39F32yY4t7MwaNS2j3fq7w" target="_blank" rel="noopener">Epicenter Files</a></td>
+<td data-sort="45">45</td>
+<td data-sort="515312">515.312</td>
+<td data-sort="1810">1.810</td>
+<td data-sort="284.7">284.7</td>
+<td data-sort="1031">$1.031 - $3.092 <span class="tag">estimado</span></td>
+<td>No</td>
+<td>No</td>
+<td data-sort="3" class="rank rank-3">3</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/channel/UCHR33aJzt9_R1w9Z83kUBAQ" target="_blank" rel="noopener">The Quiet Record</a></td>
+<td data-sort="26">26</td>
+<td data-sort="608019">608.019</td>
+<td data-sort="1770">1.770</td>
+<td data-sort="343.51">343.5</td>
+<td data-sort="608">$608 - $1.824 <span class="tag">estimado</span></td>
+<td>No</td>
+<td>No</td>
+<td data-sort="3" class="rank rank-3">3</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/channel/UC7s4LegZEkSJfkenm0aL-iQ" target="_blank" rel="noopener">Historic Dave</a></td>
+<td data-sort="78">78</td>
+<td data-sort="924176">924.176</td>
+<td data-sort="2950">2.950</td>
+<td data-sort="313.28">313.3</td>
+<td data-sort="1848">$1.848 - $5.545 <span class="tag">estimado</span></td>
+<td>No</td>
+<td>No</td>
+<td data-sort="3" class="rank rank-3">3</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/channel/UC356D-NzdnznBOftTpYoBLw" target="_blank" rel="noopener">Dr. Ares Senior</a></td>
+<td data-sort="36">36</td>
+<td data-sort="1444711">1.444.711</td>
+<td data-sort="19000">19.000</td>
+<td data-sort="76.04">76.0</td>
+<td data-sort="11558">$11.558 - $36.118 <span class="tag">estimado</span></td>
+<td>Si</td>
+<td>No</td>
+<td data-sort="3" class="rank rank-3">3</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/channel/UCjtZtRDuALbG747iwFUFCVA" target="_blank" rel="noopener">S zone</a></td>
+<td data-sort="74">74</td>
+<td data-sort="3984263">3.984.263</td>
+<td data-sort="37300">37.300</td>
+<td data-sort="106.82">106.8</td>
+<td data-sort="7969">$7.969 - $23.906 <span class="tag">estimado</span></td>
+<td>Si</td>
+<td>No</td>
+<td data-sort="3" class="rank rank-3">3</td>
+</tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section id="panel-long_form" class="tabpanel" role="tabpanel" aria-labelledby="tab-long_form" hidden>
+  <p class="criteria">Canal &lt;=90 dias - &gt;=200.000 vistas/mes - duracion media &gt;70 min</p>
+  <p class="count">Canales: <strong class="count-num">12</strong></p>
+  <div class="table-wrap">
+  <table data-section="long_form">
+    <thead>
+      <tr>
+        <th data-key="name">Canal</th>
+        <th data-key="days" class="num">Dias</th>
+        <th data-key="views" class="num">Vistas 30d</th>
+        <th data-key="subs" class="num">Subs</th>
+        <th data-key="ratio" class="num">Ratio V/S</th>
+        <th data-key="revenue" class="num">Ingresos est.</th>
+        <th data-key="monetized">Monetiza</th>
+        <th data-key="external">Ingr. externos</th>
+        <th data-key="rank" class="num">Ranking</th>
+      </tr>
+    </thead>
+    <tbody>
+<tr>
+<td><a href="https://www.youtube.com/channel/UCL9dJYOmkZe_1_3ET-YEdcQ" target="_blank" rel="noopener">Uncut Interrogation</a></td>
+<td data-sort="47">47</td>
+<td data-sort="952178">952.178</td>
+<td data-sort="6080">6.080</td>
+<td data-sort="156.61">156.6</td>
+<td data-sort="1904">$1.904 - $5.713 <span class="tag">estimado</span></td>
+<td>Si</td>
+<td>Si</td>
+<td data-sort="7" class="rank rank-7">7</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/channel/UCbvmhRY2Ay6er_RCfaNoEeg" target="_blank" rel="noopener">Serene Dreamlands 8K</a></td>
+<td data-sort="56">56</td>
+<td data-sort="598554">598.554</td>
+<td data-sort="1910">1.910</td>
+<td data-sort="313.38">313.4</td>
+<td data-sort="599">$599 - $1.796 <span class="tag">estimado</span></td>
+<td>Si</td>
+<td>No</td>
+<td data-sort="6" class="rank rank-6">6</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/channel/UC3BTP2FmssM9YAt2QIe6u4A" target="_blank" rel="noopener">The Unseen Earth</a></td>
+<td data-sort="31">31</td>
+<td data-sort="399060">399.060</td>
+<td data-sort="1530">1.530</td>
+<td data-sort="260.82">260.8</td>
+<td data-sort="399">$399 - $1.197 <span class="tag">estimado</span></td>
+<td>No</td>
+<td>No</td>
+<td data-sort="6" class="rank rank-6">6</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/channel/UC-BWs8Kc2I87wrqb6CctM_w" target="_blank" rel="noopener">Silas Investigates</a></td>
+<td data-sort="34">34</td>
+<td data-sort="424019">424.019</td>
+<td data-sort="2009">2.009</td>
+<td data-sort="211.06">211.1</td>
+<td data-sort="848">$848 - $2.544 <span class="tag">estimado</span></td>
+<td>Si</td>
+<td>No</td>
+<td data-sort="5" class="rank rank-5">5</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/channel/UCFZ_h_YPm3lRy_Eg4mxqMfA" target="_blank" rel="noopener">The Ocean Planet</a></td>
+<td data-sort="56">56</td>
+<td data-sort="623499">623.499</td>
+<td data-sort="2970">2.970</td>
+<td data-sort="209.93">209.9</td>
+<td data-sort="1247">$1.247 - $3.741 <span class="tag">estimado</span></td>
+<td>Si</td>
+<td>No</td>
+<td data-sort="5" class="rank rank-5">5</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/channel/UCBQP2z9Gw2eqfLhe1w1PeuA" target="_blank" rel="noopener">Old Lion Stories</a></td>
+<td data-sort="62">62</td>
+<td data-sort="1693931">1.693.931</td>
+<td data-sort="17900">17.900</td>
+<td data-sort="94.63">94.6</td>
+<td data-sort="3388">$3.388 - $10.164 <span class="tag">estimado</span></td>
+<td>Si</td>
+<td>No</td>
+<td data-sort="5" class="rank rank-5">5</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/channel/UCWawMizd4kstC8T2pMi8axQ" target="_blank" rel="noopener">The Last Sin</a></td>
+<td data-sort="35">35</td>
+<td data-sort="238357">238.357</td>
+<td data-sort="1670">1.670</td>
+<td data-sort="142.73">142.7</td>
+<td data-sort="477">$477 - $1.430 <span class="tag">estimado</span></td>
+<td>Si</td>
+<td>No</td>
+<td data-sort="4" class="rank rank-4">4</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/channel/UCUtiT92khBLMCUywH23vfhA" target="_blank" rel="noopener">Mars Manhwa Teller</a></td>
+<td data-sort="30">30</td>
+<td data-sort="392319">392.319</td>
+<td data-sort="3650">3.650</td>
+<td data-sort="107.48">107.5</td>
+<td data-sort="392">$392 - $1.177 <span class="tag">estimado</span></td>
+<td>Si</td>
+<td>No</td>
+<td data-sort="4" class="rank rank-4">4</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/channel/UCD6KjK7dVMu4Qzdd6qaCmKQ" target="_blank" rel="noopener">Timeless Dreams</a></td>
+<td data-sort="64">64</td>
+<td data-sort="237992">237.992</td>
+<td data-sort="1220">1.220</td>
+<td data-sort="195.08">195.1</td>
+<td data-sort="476">$476 - $1.428 <span class="tag">estimado</span></td>
+<td>No</td>
+<td>No</td>
+<td data-sort="4" class="rank rank-4">4</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/channel/UCIuYX0IG6Aeq7AmSys0fMXw" target="_blank" rel="noopener">Luxury Garden Escapes</a></td>
+<td data-sort="73">73</td>
+<td data-sort="221885">221.885</td>
+<td data-sort="1640">1.640</td>
+<td data-sort="135.3">135.3</td>
+<td data-sort="222">$222 - $666 <span class="tag">estimado</span></td>
+<td>No</td>
+<td>No</td>
+<td data-sort="3" class="rank rank-3">3</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/channel/UCdxA8IhFLirF67TpFLPllrA" target="_blank" rel="noopener">Yoru Kai</a></td>
+<td data-sort="78">78</td>
+<td data-sort="335007">335.007</td>
+<td data-sort="1860">1.860</td>
+<td data-sort="180.11">180.1</td>
+<td data-sort="335">$335 - $1.005 <span class="tag">estimado</span></td>
+<td>Si</td>
+<td>No</td>
+<td data-sort="3" class="rank rank-3">3</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/channel/UCNdlD8Yli6IENNJqnSCF8mQ" target="_blank" rel="noopener">Velvet Society</a></td>
+<td data-sort="52">52</td>
+<td data-sort="313425">313.425</td>
+<td data-sort="1940">1.940</td>
+<td data-sort="161.56">161.6</td>
+<td data-sort="627">$627 - $1.881 <span class="tag">estimado</span></td>
+<td>Si</td>
+<td>No</td>
+<td data-sort="3" class="rank rank-3">3</td>
+</tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section id="panel-faceless_nuevos" class="tabpanel" role="tabpanel" aria-labelledby="tab-faceless_nuevos" hidden>
+  <p class="criteria">&gt;=1.000.000 vistas/30d - canal &lt;=90 dias</p>
+  <p class="count">Canales: <strong class="count-num">12</strong></p>
+  <div class="table-wrap">
+  <table data-section="faceless_nuevos">
+    <thead>
+      <tr>
+        <th data-key="name">Canal</th>
+        <th data-key="days" class="num">Dias</th>
+        <th data-key="views" class="num">Vistas 30d</th>
+        <th data-key="subs" class="num">Subs</th>
+        <th data-key="ratio" class="num">Ratio V/S</th>
+        <th data-key="revenue" class="num">Ingresos est.</th>
+        <th data-key="monetized">Monetiza</th>
+        <th data-key="external">Ingr. externos</th>
+        <th data-key="rank" class="num">Ranking</th>
+      </tr>
+    </thead>
+    <tbody>
+<tr>
+<td><a href="https://www.youtube.com/channel/UC3M9_Gwq-Ad0SLyumT2m4FA" target="_blank" rel="noopener">Power Decoded</a></td>
+<td data-sort="18">18</td>
+<td data-sort="2571861">2.571.861</td>
+<td data-sort="7870">7.870</td>
+<td data-sort="326.79">326.8</td>
+<td data-sort="5144">$5.144 - $15.431 <span class="tag">estimado</span></td>
+<td>No</td>
+<td>No</td>
+<td data-sort="5" class="rank rank-5">5</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/channel/UCarhEwIqdYAmLTFamSTYbNg" target="_blank" rel="noopener">Global Life Lens</a></td>
+<td data-sort="52">52</td>
+<td data-sort="3207855">3.207.855</td>
+<td data-sort="8530">8.530</td>
+<td data-sort="376.07">376.1</td>
+<td data-sort="3208">$3.208 - $9.624 <span class="tag">estimado</span></td>
+<td>Si</td>
+<td>No</td>
+<td data-sort="4" class="rank rank-4">4</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/channel/UCjw4TogAifphMJ8HfZpk22w" target="_blank" rel="noopener">UnderTheHeadline</a></td>
+<td data-sort="10">10</td>
+<td data-sort="4422067">4.422.067</td>
+<td data-sort="15800">15.800</td>
+<td data-sort="279.88">279.9</td>
+<td data-sort="8844">$8.844 - $26.532 <span class="tag">estimado</span></td>
+<td>No</td>
+<td>No</td>
+<td data-sort="4" class="rank rank-4">4</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/channel/UC6aTRcVR6d-H80WNzY058Sg" target="_blank" rel="noopener">WLS Zone</a></td>
+<td data-sort="85">85</td>
+<td data-sort="1208331">1.208.331</td>
+<td data-sort="1620">1.620</td>
+<td data-sort="745.88">745.9</td>
+<td data-sort="2417">$2.417 - $7.250 <span class="tag">estimado</span></td>
+<td>No</td>
+<td>No</td>
+<td data-sort="4" class="rank rank-4">4</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/channel/UCmzkwihfGCDEVZN-RQBIhtA" target="_blank" rel="noopener">Wild Wings Survival</a></td>
+<td data-sort="56">56</td>
+<td data-sort="1501909">1.501.909</td>
+<td data-sort="2890">2.890</td>
+<td data-sort="519.69">519.7</td>
+<td data-sort="3004">$3.004 - $9.011 <span class="tag">estimado</span></td>
+<td>Si</td>
+<td>No</td>
+<td data-sort="4" class="rank rank-4">4</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/channel/UCLmnyjpVG_0UZwzcLgpEmBA" target="_blank" rel="noopener">Wild Disclosure</a></td>
+<td data-sort="78">78</td>
+<td data-sort="2162892">2.162.892</td>
+<td data-sort="4670">4.670</td>
+<td data-sort="463.15">463.1</td>
+<td data-sort="4326">$4.326 - $12.977 <span class="tag">estimado</span></td>
+<td>Si</td>
+<td>No</td>
+<td data-sort="4" class="rank rank-4">4</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/channel/UCM7EjjwsshQzCe0c_HsHmaQ" target="_blank" rel="noopener">The Domino Effect</a></td>
+<td data-sort="48">48</td>
+<td data-sort="5258225">5.258.225</td>
+<td data-sort="37400">37.400</td>
+<td data-sort="140.59">140.6</td>
+<td data-sort="10516">$10.516 - $31.549 <span class="tag">estimado</span></td>
+<td>No</td>
+<td>No</td>
+<td data-sort="4" class="rank rank-4">4</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/channel/UCEcd_xlG0zRmK7dCYPStWCA" target="_blank" rel="noopener">Vanta</a></td>
+<td data-sort="79">79</td>
+<td data-sort="1160815">1.160.815</td>
+<td data-sort="1880">1.880</td>
+<td data-sort="617.45">617.5</td>
+<td data-sort="2322">$2.322 - $6.965 <span class="tag">estimado</span></td>
+<td>Si</td>
+<td>No</td>
+<td data-sort="4" class="rank rank-4">4</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/channel/UCc0OILjshBxiomU7H2CEVaw" target="_blank" rel="noopener">Judge Jason </a></td>
+<td data-sort="83">83</td>
+<td data-sort="3896196">3.896.196</td>
+<td data-sort="27200">27.200</td>
+<td data-sort="143.24">143.2</td>
+<td data-sort="31170">$31.170 - $97.405 <span class="tag">estimado</span></td>
+<td>Si</td>
+<td>No</td>
+<td data-sort="4" class="rank rank-4">4</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/channel/UCXa5V2-4znoM3DkbPnssaKQ" target="_blank" rel="noopener">XTeam Restoration</a></td>
+<td data-sort="85">85</td>
+<td data-sort="2990815">2.990.815</td>
+<td data-sort="17400">17.400</td>
+<td data-sort="171.89">171.9</td>
+<td data-sort="2991">$2.991 - $8.972 <span class="tag">estimado</span></td>
+<td>Si</td>
+<td>No</td>
+<td data-sort="4" class="rank rank-4">4</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/channel/UC2iZ8jer-3l7UY8j3Cw2VmQ" target="_blank" rel="noopener">live line</a></td>
+<td data-sort="37">37</td>
+<td data-sort="1160541">1.160.541</td>
+<td data-sort="4510">4.510</td>
+<td data-sort="257.33">257.3</td>
+<td data-sort="1161">$1.161 - $3.482 <span class="tag">estimado</span></td>
+<td>No</td>
+<td>No</td>
+<td data-sort="3" class="rank rank-3">3</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/channel/UCX2UZLcFhehvBmLcNGCQsjw" target="_blank" rel="noopener">Palace Beacon</a></td>
+<td data-sort="69">69</td>
+<td data-sort="1848310">1.848.310</td>
+<td data-sort="30900">30.900</td>
+<td data-sort="59.82">59.8</td>
+<td data-sort="3697">$3.697 - $11.090 <span class="tag">estimado</span></td>
+<td>Si</td>
+<td>No</td>
+<td data-sort="3" class="rank rank-3">3</td>
+</tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section id="panel-faceless_establecidos" class="tabpanel" role="tabpanel" aria-labelledby="tab-faceless_establecidos" hidden>
+  <p class="criteria">&gt;=1.000.000 vistas/30d - canal &gt;90 dias</p>
+  <p class="count">Canales: <strong class="count-num">12</strong></p>
+  <div class="table-wrap">
+  <table data-section="faceless_establecidos">
+    <thead>
+      <tr>
+        <th data-key="name">Canal</th>
+        <th data-key="days" class="num">Dias</th>
+        <th data-key="views" class="num">Vistas 30d</th>
+        <th data-key="subs" class="num">Subs</th>
+        <th data-key="ratio" class="num">Ratio V/S</th>
+        <th data-key="revenue" class="num">Ingresos est.</th>
+        <th data-key="monetized">Monetiza</th>
+        <th data-key="external">Ingr. externos</th>
+        <th data-key="rank" class="num">Ranking</th>
+      </tr>
+    </thead>
+    <tbody>
+<tr>
+<td><a href="https://www.youtube.com/channel/UC2Z5D9u4HSXyY8ZoPS49Amw" target="_blank" rel="noopener">Child Stars Then &amp; Now</a></td>
+<td data-sort="217">217</td>
+<td data-sort="1570608">1.570.608</td>
+<td data-sort="948">948</td>
+<td data-sort="1656.76">1656.8</td>
+<td data-sort="3141">$3.141 - $9.424 <span class="tag">estimado</span></td>
+<td>No</td>
+<td>No</td>
+<td data-sort="7" class="rank rank-7">7</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/channel/UCPOE_IMw6VvH_VzlEY5LJKQ" target="_blank" rel="noopener">LURU Momentos</a></td>
+<td data-sort="195">195</td>
+<td data-sort="2745171">2.745.171</td>
+<td data-sort="6000">6.000</td>
+<td data-sort="457.53">457.5</td>
+<td data-sort="5490">$5.490 - $16.471 <span class="tag">estimado</span></td>
+<td>Si</td>
+<td>No</td>
+<td data-sort="6" class="rank rank-6">6</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/channel/UCh9HN4Rq-HGWgagJlAhqTPA" target="_blank" rel="noopener">Old Hollywood Files</a></td>
+<td data-sort="713">713</td>
+<td data-sort="1204443">1.204.443</td>
+<td data-sort="2040">2.040</td>
+<td data-sort="590.41">590.4</td>
+<td data-sort="2409">$2.409 - $7.227 <span class="tag">estimado</span></td>
+<td>Si</td>
+<td>No</td>
+<td data-sort="6" class="rank rank-6">6</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/channel/UCMs220mgLmO8sDt_IN0mbnw" target="_blank" rel="noopener">DT Civil Core</a></td>
+<td data-sort="106">106</td>
+<td data-sort="1329898">1.329.898</td>
+<td data-sort="2500">2.500</td>
+<td data-sort="531.96">532.0</td>
+<td data-sort="5320">$5.320 - $13.299 <span class="tag">estimado</span></td>
+<td>Si</td>
+<td>No</td>
+<td data-sort="6" class="rank rank-6">6</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/channel/UCnzHd1bAbcAbZIwgY1Fu4jQ" target="_blank" rel="noopener">Exploradores Épicos</a></td>
+<td data-sort="381">381</td>
+<td data-sort="8146052">8.146.052</td>
+<td data-sort="35000">35.000</td>
+<td data-sort="232.74">232.7</td>
+<td data-sort="8146">$8.146 - $24.438 <span class="tag">estimado</span></td>
+<td>Si</td>
+<td>No</td>
+<td data-sort="5" class="rank rank-5">5</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/channel/UC1NVjuwLxA_x5GI6jQ_DMsQ" target="_blank" rel="noopener">Creative DIY365</a></td>
+<td data-sort="2856">2.856</td>
+<td data-sort="8780326">8.780.326</td>
+<td data-sort="116000">116.000</td>
+<td data-sort="75.69">75.7</td>
+<td data-sort="8780">$8.780 - $26.341 <span class="tag">estimado</span></td>
+<td>Si</td>
+<td>No</td>
+<td data-sort="5" class="rank rank-5">5</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/channel/UC54Cq-4blQ0wCSbSL0lQegA" target="_blank" rel="noopener">UNREDACTED Cinema</a></td>
+<td data-sort="572">572</td>
+<td data-sort="1693406">1.693.406</td>
+<td data-sort="3570">3.570</td>
+<td data-sort="474.34">474.3</td>
+<td data-sort="1693">$1.693 - $5.080 <span class="tag">estimado</span></td>
+<td>Si</td>
+<td>No</td>
+<td data-sort="5" class="rank rank-5">5</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/channel/UCEgqRvGQhFqTO7758UOuhYg" target="_blank" rel="noopener">Life After Fame - fail army funny</a></td>
+<td data-sort="546">546</td>
+<td data-sort="2514897">2.514.897</td>
+<td data-sort="6290">6.290</td>
+<td data-sort="399.82">399.8</td>
+<td data-sort="5030">$5.030 - $15.089 <span class="tag">estimado</span></td>
+<td>Si</td>
+<td>No</td>
+<td data-sort="5" class="rank rank-5">5</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/channel/UC420zaF-EjI9BNflrv5RhIw" target="_blank" rel="noopener">TYNA</a></td>
+<td data-sort="496">496</td>
+<td data-sort="4302097">4.302.097</td>
+<td data-sort="113000">113.000</td>
+<td data-sort="38.07">38.1</td>
+<td data-sort="4302">$4.302 - $12.906 <span class="tag">estimado</span></td>
+<td>No</td>
+<td>No</td>
+<td data-sort="4" class="rank rank-4">4</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/channel/UCnRZgX7Pl3-Z2hFU7EKOQpg" target="_blank" rel="noopener">1950s Dream Time</a></td>
+<td data-sort="565">565</td>
+<td data-sort="2477987">2.477.987</td>
+<td data-sort="47800">47.800</td>
+<td data-sort="51.84">51.8</td>
+<td data-sort="2478">$2.478 - $7.434 <span class="tag">estimado</span></td>
+<td>No</td>
+<td>Si</td>
+<td data-sort="4" class="rank rank-4">4</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/channel/UC5FCyk1QkTBLgWm-w866PGg" target="_blank" rel="noopener">Epic AI Films</a></td>
+<td data-sort="726">726</td>
+<td data-sort="7349443">7.349.443</td>
+<td data-sort="126000">126.000</td>
+<td data-sort="58.33">58.3</td>
+<td data-sort="7349">$7.349 - $22.048 <span class="tag">estimado</span></td>
+<td>Si</td>
+<td>Si</td>
+<td data-sort="4" class="rank rank-4">4</td>
+</tr>
+<tr>
+<td><a href="https://www.youtube.com/channel/UCuRdG8jvao58DWP8lHKSYbQ" target="_blank" rel="noopener">L&#x27;univers D&#x27;amina</a></td>
+<td data-sort="106">106</td>
+<td data-sort="1741636">1.741.636</td>
+<td data-sort="55200">55.200</td>
+<td data-sort="31.55">31.6</td>
+<td data-sort="3483">$3.483 - $10.450 <span class="tag">estimado</span></td>
+<td>No</td>
+<td>No</td>
+<td data-sort="4" class="rank rank-4">4</td>
+</tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+<script>
+(function() {
+  var tabs = document.querySelectorAll('.tab');
+  var panels = document.querySelectorAll('.tabpanel');
+  function activate(id) {
+    tabs.forEach(function(t) {
+      var on = t.dataset.target === id;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    panels.forEach(function(p) {
+      p.hidden = p.id !== 'panel-' + id;
+    });
+  }
+  tabs.forEach(function(t) {
+    t.addEventListener('click', function() { activate(t.dataset.target); });
+  });
+  if (tabs.length) activate(tabs[0].dataset.target);
+
+  document.querySelectorAll('table').forEach(function(table) {
+    var state = { key: null, dir: 1 };
+    table.querySelectorAll('thead th').forEach(function(th, idx) {
+      th.addEventListener('click', function() {
+        var tbody = table.querySelector('tbody');
+        var rows = Array.prototype.slice.call(tbody.querySelectorAll('tr'));
+        var dir = (state.key === idx) ? -state.dir : 1;
+        state.key = idx; state.dir = dir;
+        rows.sort(function(a, b) {
+          var ca = a.children[idx], cb = b.children[idx];
+          var va = ca.dataset.sort !== undefined ? parseFloat(ca.dataset.sort) : ca.textContent.trim().toLowerCase();
+          var vb = cb.dataset.sort !== undefined ? parseFloat(cb.dataset.sort) : cb.textContent.trim().toLowerCase();
+          if (va < vb) return -1 * dir;
+          if (va > vb) return 1 * dir;
+          return 0;
+        });
+        rows.forEach(function(r) { tbody.appendChild(r); });
+      });
+    });
+  });
+
+  var minRank = document.getElementById('minRank');
+  function applyFilter() {
+    var min = parseInt(minRank.value, 10) || 1;
+    document.querySelectorAll('table').forEach(function(table) {
+      var rankIdx = 8;
+      table.querySelectorAll('tbody tr').forEach(function(row) {
+        var cell = row.children[rankIdx];
+        var val = cell ? parseFloat(cell.dataset.sort) : 0;
+        row.classList.toggle('hidden-by-filter', val < min);
+      });
+      var panel = table.closest('.tabpanel');
+      var countEl = panel.querySelector('.count-num');
+      var visible = table.querySelectorAll('tbody tr:not(.hidden-by-filter)').length;
+      if (countEl) countEl.textContent = visible;
+    });
+  }
+  minRank.addEventListener('input', applyFilter);
+})();
+</script>
+</body>
+</html>

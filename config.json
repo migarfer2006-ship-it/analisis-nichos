@@ -1,0 +1,69 @@
+{
+  "_comment": "Parametros del pipeline. Cambiar valores aqui NO requiere tocar codigo ni el cron job.",
+
+  "target_channels_per_section": 12,
+  "min_channels_per_section_spec": 30,
+
+  "sections": [
+    {
+      "id": "ia_nichos",
+      "title": "Nichos IA",
+      "priority": 1,
+      "criteria": {
+        "video_duration_min_minutes": 10,
+        "video_duration_max_minutes": 45,
+        "views_last_30_days_min": 500000,
+        "channel_age_max_days": 90,
+        "requires_ai_signals": true
+      }
+    },
+    {
+      "id": "long_form",
+      "title": "Long Form",
+      "priority": 2,
+      "criteria": {
+        "channel_age_max_days": 90,
+        "views_per_month_min": 200000,
+        "video_duration_min_minutes": 70
+      }
+    },
+    {
+      "id": "faceless_nuevos",
+      "title": "YouTube Faceless (nuevos)",
+      "priority": 3,
+      "criteria": {
+        "views_last_30_days_min": 1000000,
+        "channel_age_max_days": 90
+      }
+    },
+    {
+      "id": "faceless_establecidos",
+      "title": "YouTube Faceless (establecidos)",
+      "priority": 4,
+      "criteria": {
+        "views_last_30_days_min": 1000000,
+        "channel_age_min_days": 91
+      }
+    }
+  ],
+
+  "rpm_table_usd_per_1000_views": {
+    "finanzas_legal_seguros_salud": { "min": 8, "max": 25, "label": "alto" },
+    "tecnologia_negocios": { "min": 4, "max": 10, "label": "medio-alto" },
+    "entretenimiento_historia_curiosidades": { "min": 2, "max": 6, "label": "medio" },
+    "otros": { "min": 1, "max": 3, "label": "bajo" }
+  },
+
+  "ranking_weights": {
+    "_comment": "Suman 1.0. Cada componente se normaliza 0-10 antes de ponderar.",
+    "views_subscribers_ratio": 0.35,
+    "sustained_vph_last_5_10_videos": 0.30,
+    "upload_consistency": 0.20,
+    "estimated_revenue": 0.15
+  },
+
+  "dedup_priority_order": ["ia_nichos", "long_form", "faceless_nuevos", "faceless_establecidos"],
+
+  "output_html_path": "dashboard.html",
+  "data_snapshot_path": "data/latest.json"
+}
