@@ -1,0 +1,43 @@
+{
+  "run_timestamp": "2026-09-11T00:15:00+00:00",
+  "trigger": "Peticion de usuario: analisis profundo de nichos faceless con filtro subs<50K + outlier desproporcionado + RPM real + competencia (get_niche_overview)",
+  "seeds_used_for_similar_channels_level3": [
+    {"name": "The Quiet Record", "channel_id": "UCHR33aJzt9_R1w9Z83kUBAQ", "disproportion_index_at_selection": 4.751},
+    {"name": "Mars Manhwa Teller", "channel_id": "UCUtiT92khBLMCUywH23vfhA", "disproportion_index_at_selection": 3.4},
+    {"name": "Global Life Lens", "channel_id": "UCarhEwIqdYAmLTFamSTYbNg", "disproportion_index_at_selection": 3.215},
+    {"name": "Wild Disclosure", "channel_id": "UCLmnyjpVG_0UZwzcLgpEmBA", "disproportion_index_at_selection": 2.961},
+    {"name": "UNREDACTED Cinema", "channel_id": "UC54Cq-4blQ0wCSbSL0lQegA", "disproportion_index_at_selection": 2.675},
+    {"name": "The Last Sin", "channel_id": "UCWawMizd4kstC8T2pMi8axQ", "disproportion_index_at_selection": 2.222},
+    {"name": "Old Hollywood Files", "channel_id": "UCh9HN4Rq-HGWgagJlAhqTPA", "disproportion_index_at_selection": 1.863},
+    {"name": "Yoru Kai", "channel_id": "UCdxA8IhFLirF67TpFLPllrA", "disproportion_index_at_selection": 1.64}
+  ],
+  "funnel": {
+    "stage_0_original_pool_last_dashboard_run": 48,
+    "stage_1_original_pool_subs_lt_50k": 45,
+    "stage_2_discovered_via_similar_channels_level3_unique": 664,
+    "stage_2b_discovered_subs_lt_50k_recent_lte_200d_not_in_original": 171,
+    "stage_3_probed_with_youtube_channel_outliers_or_channel_videos": 13,
+    "stage_4_passed_rpm_gte_3usd": 6,
+    "stage_5_passed_competition_low_saturation": 1,
+    "final_survivors": 1
+  },
+  "thresholds_applied": {
+    "max_subscribers": 50000,
+    "min_rpm_usd": 3,
+    "premium_rpm_usd": 8,
+    "saturation_flag_similar_channels_gte_50_similarity_count": 10
+  },
+  "tools_used": [
+    "get_similar_channels (level=3, async) + get_similar_channels_status",
+    "youtube_channel_outliers",
+    "youtube_channel_videos (sort_by=popular)",
+    "get_video_rpm",
+    "get_niche_overview (async) + get_niche_overview_status"
+  ],
+  "notes": [
+    "El cluster 'documental de vida salvaje IA' goteo mas de 5 canales casi identicos (Secret Mystic Feed, Beak Rescue, The Secrets Of Animal Jungle, The Untamed World, Wildlife Survival-VDN) todos creados en junio-agosto 2026: fuerte senal de nicho caliente pero ya saturado por entrada simultanea de multiples creadores.",
+    "4 de los 8 canales seed de similar_channels devolvieron 12 competidores directos con similarity>=50 en su propio niche_overview, frente a solo 5 (1 con similarity>=50) para The Quiet Record: la diferencia relativa es la base de la clasificacion de saturacion.",
+    "American Secrets registro el RPM mas alto de todo el analisis (9.66 USD promedio) pero fue descartado por saturacion de nicho (12/12 similares).",
+    "UNREDACTED Cinema fue excluido sin calcular RPM por riesgo de marca/monetizacion (contenido de cine adulto historico)."
+  ]
+}

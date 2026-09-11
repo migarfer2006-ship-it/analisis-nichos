@@ -45,6 +45,24 @@ def rank_tier(r: int) -> str:
     return "lo"
 
 
+def disproportion_index(ch: dict) -> float:
+    """outlier_score / (subscribers/1000): cuanto mas alto, mas desproporcionado
+    el rendimiento viral del canal respecto a su tamano de audiencia."""
+    subs = ch.get("subscribers") or 0
+    outlier = ch.get("outlier_score") or 0
+    if subs <= 0:
+        return 0.0
+    return outlier / (subs / 1000)
+
+
+def di_tier(di: float) -> str:
+    if di >= 3:
+        return "hi"
+    if di >= 1:
+        return "mid"
+    return "lo"
+
+
 def status_pill(is_true: bool, label_yes: str, label_no: str) -> str:
     cls = "yes" if is_true else "no"
     label = label_yes if is_true else label_no
@@ -63,6 +81,11 @@ def channel_row_html(ch: dict) -> str:
     ratio = ch.get("views_subscribers_ratio", 0)
     monetized = status_pill(bool(ch.get("is_monetized")), "Sí", "No")
     external = status_pill(bool(ch.get("external_monetization_signals")), "Sí", "No")
+    di = disproportion_index(ch)
+    rpm_avg = ch.get("rpm_avg")
+    rpm_cell = f"${rpm_avg:.1f}" if isinstance(rpm_avg, (int, float)) else "—"
+    competition = ch.get("competition_level")
+    competition_cell = html.escape(competition) if competition else "—"
 
     return f"""<tr>
 <td class="col-name"><a href="{url}" target="_blank" rel="noopener">{name}</a></td>
@@ -70,6 +93,9 @@ def channel_row_html(ch: dict) -> str:
 <td class="num" data-sort="{views30}">{fmt_int(views30)}</td>
 <td class="num" data-sort="{subs}">{fmt_int(subs)}</td>
 <td class="num" data-sort="{ratio}">{ratio:.1f}×</td>
+<td class="num" data-sort="{di}"><span class="rankpill rank-{di_tier(di)}">{di:.2f}</span></td>
+<td class="num" data-sort="{rpm_avg or 0}">{rpm_cell}</td>
+<td>{competition_cell}</td>
 <td class="num col-rev" data-sort="{rev_min}">{fmt_money(rev_min)}–{fmt_money(rev_max)}<span class="tag">estimado</span></td>
 <td>{monetized}</td>
 <td>{external}</td>
@@ -77,12 +103,16 @@ def channel_row_html(ch: dict) -> str:
 </tr>"""
 
 
-def section_table_html(section_id: str, title: str, channels: list, criteria_desc: str) -> str:
+def section_table_html(section_id: str, title: str, channels: list, criteria_desc: str, excluded_count: int) -> str:
     rows = "\n".join(channel_row_html(c) for c in channels)
+    excluded_note = (
+        f' · <span class="tag">{excluded_count} excluidos por &gt;={fmt_int(50000)} subs</span>'
+        if excluded_count else ""
+    )
     return f"""
 <section id="panel-{section_id}" class="tabpanel" role="tabpanel" aria-labelledby="tab-{section_id}" hidden>
   <p class="criteria">{html.escape(criteria_desc)}</p>
-  <p class="count">Canales en esta sección: <strong class="count-num">{len(channels)}</strong></p>
+  <p class="count">Canales en esta sección: <strong class="count-num">{len(channels)}</strong>{excluded_note}</p>
   <div class="table-wrap">
   <table data-section="{section_id}">
     <thead>
@@ -92,6 +122,9 @@ def section_table_html(section_id: str, title: str, channels: list, criteria_des
         <th data-key="views" class="num">Vistas 30d</th>
         <th data-key="subs" class="num">Subs</th>
         <th data-key="ratio" class="num">Ratio V/S</th>
+        <th data-key="di" class="num" title="outlier_score / (subs/1000)">Índice desprop.</th>
+        <th data-key="rpm" class="num" title="RPM real via get_video_rpm, cuando esta disponible">RPM real</th>
+        <th data-key="competition" title="via get_niche_overview, cuando esta disponible">Competencia</th>
         <th data-key="revenue" class="num">Ingresos est.</th>
         <th data-key="monetized">Monetiza</th>
         <th data-key="external">Ingr. externos</th>
@@ -107,30 +140,39 @@ def section_table_html(section_id: str, title: str, channels: list, criteria_des
 
 
 CRITERIA_DESC = {
-    "ia_nichos": "Duracion media 10-45 min - >=500.000 vistas/30d - canal <=90 dias - senales de produccion por IA",
-    "long_form": "Canal <=90 dias - >=200.000 vistas/mes - duracion media >70 min",
-    "faceless_nuevos": ">=1.000.000 vistas/30d - canal <=90 dias",
-    "faceless_establecidos": ">=1.000.000 vistas/30d - canal >90 dias",
+    "ia_nichos": "Duracion media 10-45 min - >=500.000 vistas/30d - canal <=90 dias - senales de produccion por IA - subs<50.000 - ordenado por indice de desproporcion",
+    "long_form": "Canal <=90 dias - >=200.000 vistas/mes - duracion media >70 min - subs<50.000 - ordenado por indice de desproporcion",
+    "faceless_nuevos": ">=1.000.000 vistas/30d - canal <=90 dias - subs<50.000 - ordenado por indice de desproporcion",
+    "faceless_establecidos": ">=1.000.000 vistas/30d - canal >90 dias - subs<50.000 - ordenado por indice de desproporcion",
 }
 
 
 def build(config: dict, data: dict, out_path: Path):
     sections_cfg = {s["id"]: s for s in config["sections"]}
     generated_at = data.get("generated_at", datetime.now(timezone.utc).isoformat())
+    deep_filter = config.get("deep_filter_criteria", {})
+    max_subs = deep_filter.get("max_subscribers")
 
     tabs_html = []
     panels_html = []
     for i, s in enumerate(config["sections"]):
         sid = s["id"]
         title = s["title"]
-        channels = data.get("sections", {}).get(sid, [])
+        all_channels = data.get("sections", {}).get(sid, [])
+        if max_subs:
+            channels = [c for c in all_channels if (c.get("subscribers") or 0) < max_subs]
+            excluded_count = len(all_channels) - len(channels)
+        else:
+            channels = all_channels
+            excluded_count = 0
+        channels = sorted(channels, key=disproportion_index, reverse=True)
         tabs_html.append(
             f'<button class="tab" id="tab-{sid}" role="tab" '
             f'aria-selected="{"true" if i == 0 else "false"}" '
             f'aria-controls="panel-{sid}" data-target="{sid}">{html.escape(title)} '
             f'<span class="badge">{len(channels)}</span></button>'
         )
-        panels_html.append(section_table_html(sid, title, channels, CRITERIA_DESC.get(sid, "")))
+        panels_html.append(section_table_html(sid, title, channels, CRITERIA_DESC.get(sid, ""), excluded_count))
 
     html_out = TEMPLATE.format(
         generated_at=html.escape(generated_at),
@@ -244,7 +286,7 @@ h1 {{ margin: 0 0 6px; font-size: 26px; font-weight: 800; letter-spacing: -0.01e
 .count {{ font-size: 12px; color: var(--text-muted); margin: 0 0 14px; font-family: "IBM Plex Mono", monospace; }}
 .count strong {{ color: var(--text); }}
 .table-wrap {{ overflow-x: auto; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); }}
-table {{ border-collapse: collapse; width: 100%; min-width: 920px; font-size: 13px; }}
+table {{ border-collapse: collapse; width: 100%; min-width: 1180px; font-size: 13px; }}
 thead th {{
   text-align: left; background: var(--surface-alt); color: var(--text-muted); font-weight: 600;
   font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase;
@@ -297,7 +339,7 @@ footer {{ padding: 18px 28px 32px; color: var(--text-muted); font-size: 12px; }}
 {tabs}
 </div>
 {panels}
-<footer class="mono">Datos vía Nexlev MCP (search_niche_finder_channels, get_channel_analytics, get_daily_analytics, check_faceless_channel, check_channel_monetization, get_channel_promotions)</footer>
+<footer class="mono">Datos vía Nexlev MCP (search_niche_finder_channels, get_channel_analytics, get_daily_analytics, check_faceless_channel, check_channel_monetization, get_channel_promotions) · Filtro estándar desde 2026-09-11: subs&lt;50.000, ordenado por índice de desproporción (outlier/subs) · RPM real y competencia via get_video_rpm / get_niche_overview cuando el paso de verificación los ha calculado</footer>
 <script>
 (function() {{
   var tabs = document.querySelectorAll('.tab');
@@ -341,7 +383,7 @@ footer {{ padding: 18px 28px 32px; color: var(--text-muted); font-size: 12px; }}
   function applyFilter() {{
     var min = parseInt(minRank.value, 10) || 1;
     document.querySelectorAll('table').forEach(function(table) {{
-      var rankIdx = 8;
+      var rankIdx = 11;
       table.querySelectorAll('tbody tr').forEach(function(row) {{
         var cell = row.children[rankIdx];
         var val = cell ? parseFloat(cell.dataset.sort) : 0;

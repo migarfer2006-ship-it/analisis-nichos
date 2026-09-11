@@ -64,6 +64,19 @@
 
   "dedup_priority_order": ["ia_nichos", "long_form", "faceless_nuevos", "faceless_establecidos"],
 
+  "deep_filter_criteria": {
+    "_comment": "Estandar de filtrado profundo (subs+outlier+RPM+competencia) introducido en el analisis del 2026-09-11. Aplica sobre las 4 secciones de arriba, no las sustituye. Ver data/deep_analysis_*.json para el run que valido estos umbrales.",
+    "max_subscribers": 50000,
+    "subscriber_weighting": "cuanto menor el numero de subs, mejor puntuacion (no solo pasa/no pasa)",
+    "disproportion_index_formula": "outlier_score / (subscribers / 1000)",
+    "min_disproportion_index_to_flag_as_candidate": 1.0,
+    "min_rpm_usd": 3,
+    "premium_rpm_usd": 8,
+    "rpm_verification_note": "El RPM real (get_video_rpm sobre 2-3 videos top del canal) y la competencia (get_niche_overview) requieren llamadas MCP en vivo que build_dashboard.py NO ejecuta. Se calculan en un paso de verificacion aparte (agente) y se guardan en data/deep_analysis_*.json; build_dashboard.py solo los muestra si ya vienen en el JSON de canal (campos rpm_avg, rpm_video_ids, competition_level, competition_similar_count).",
+    "saturation_similarity_threshold": 50,
+    "saturation_similar_channels_count_flag": 10
+  },
+
   "output_html_path": "dashboard.html",
   "data_snapshot_path": "data/latest.json"
 }

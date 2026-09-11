@@ -1,0 +1,74 @@
+{
+  "generated_at": "2026-09-11T00:15:00+00:00",
+  "criteria_applied": {
+    "max_subscribers": 50000,
+    "subscriber_weighting": "cuanto menor, mejor puntuacion",
+    "min_disproportion_index_to_advance": 1.0,
+    "disproportion_index_formula": "outlier_score / (subscribers / 1000)",
+    "min_rpm_usd": 3,
+    "premium_rpm_usd": 8,
+    "competition_source": "get_niche_overview (similarChannels array), umbral de saturacion: >=10 canales con similarityScore>=50"
+  },
+  "survivors": [
+    {
+      "rank": 1,
+      "channel_id": "UCHR33aJzt9_R1w9Z83kUBAQ",
+      "name": "The Quiet Record",
+      "channel_url": "https://www.youtube.com/channel/UCHR33aJzt9_R1w9Z83kUBAQ",
+      "niche": "Documental narrativo de misterio oceanico / paranormal maritimo en ingles (estilo creepypasta con marco de \"testimonio militar/cientifico desclasificado\")",
+      "style_format": "Narrativo en primera/tercera persona con voz en off tipo documental, guion basado en \"testimonios\" ficticios/especulativos (buzos, submarinistas, marina), imagenes de archivo + AI, sin aparicion del creador (faceless)",
+      "avg_video_duration_min": 18,
+      "subscribers_at_capture": 2610,
+      "subscribers_range_during_analysis": "1110-2610 (creciendo muy rapido durante el propio analisis; canal creado 2026-08-12, ~29 dias de vida)",
+      "outlier_score": 8.41,
+      "disproportion_index": 4.751,
+      "disproportion_index_note": "Calculado con snapshot subs=1770; con subs=2610 mas recientes el indice baja a ~3.22, pero sigue siendo el mas alto de todo el pool analizado",
+      "rpm_analysis": {
+        "videos_used": [
+          {"video_id": "3FeuiH7tGTs", "title": "A Coast Guard Diver Surfaced White as a Sheet in 1991", "views": 427348, "rpm": 6.55},
+          {"video_id": "n1_329qjjYs", "title": "The Real Reason Megalodon May Never Have Left the Deep", "views": 203436, "rpm": 8.05}
+        ],
+        "rpm_avg": 7.3,
+        "trend": "RPM subiendo (6.55 -> 8.05) en videos mas recientes, senal de mejora de monetizacion/algoritmo"
+      },
+      "competition_analysis": {
+        "tool": "get_niche_overview",
+        "similar_channels_found": 5,
+        "similar_channels_with_similarity_gte_50": 1,
+        "top_similar": [
+          {"name": "NoSoyEseNed", "similarity": 51, "note": "Canal en espanol, horror narrativo (Analog Horror/Antartida) - solapamiento parcial de formato, no de idioma/audiencia"},
+          {"name": "Blue Nexus", "similarity": 46},
+          {"name": "Mythic Abyss", "similarity": 40},
+          {"name": "Expedition3", "similarity": 40},
+          {"name": "Abyss Theory", "similarity": 40}
+        ],
+        "saturation_level": "baja",
+        "opportunity_signal": "Solo 5 canales similares totales (vs 12 en el resto de nichos analizados en profundidad), y ninguno en ingles con similarity>=50. Nicho de nicho genuinamente desatendido."
+      },
+      "why_opportunity": "Combina el mejor disproportion_index de los ~225 candidatos analizados, RPM real por encima de umbral premium y en tendencia alcista, y la competencia mas baja detectada en todo el embudo (5 canales similares vs 12 en el resto). Canal de 29 dias que ya genera 400K+ vistas por video individual con apenas ~2.6K subs: la audiencia llega por descubrimiento/algoritmo, no por base de suscriptores, lo que es replicable con guion+voz+imagenes de archivo sin morada de produccion compleja."
+    }
+  ],
+  "rejected_at_competition_stage": [
+    {
+      "name": "American Secrets",
+      "channel_id": "UCnGVtqzoexqB5Nb-R_E51XA",
+      "reason": "RPM excelente (9.66 avg, premium) y outlier fuerte, pero 12/12 canales similares con similarity>=50 (hasta 67): nicho de \"escandalos presidenciales/casas reales\" saturado por creadores ya establecidos (White House Secrets, First Lady Secrets, Dynasty Undone, etc.)"
+    },
+    {
+      "name": "Global Life Lens",
+      "channel_id": "UCarhEwIqdYAmLTFamSTYbNg",
+      "reason": "RPM aceptable (4.96 avg) y disproportion_index alto (3.215), pero 12/12 similares con similarity>=50 (hasta 70): nicho de \"vida real en el pais X\" saturado (incluye a Explora los Paises como competidor directo)"
+    },
+    {
+      "name": "Wild Disclosure",
+      "channel_id": "UCLmnyjpVG_0UZwzcLgpEmBA",
+      "reason": "RPM en el limite (3.28 avg) y disproportion_index bueno (2.961), pero 12/12 similares con similarity>=50 (hasta 73): documental de vida salvaje AI extremadamente saturado ahora mismo (5+ canales casi identicos detectados solo en esta busqueda)"
+    }
+  ],
+  "rejected_at_rpm_stage": [
+    {"name": "Rainy Village Cooking", "channel_id": "UCK-HPXk5JhZeMv_8Q4UmOQw", "reason": "disproportion_index muy alto (4.13) pero RPM real de solo 1.07-2.38 USD (por debajo del minimo de $3)"}
+  ],
+  "excluded_for_brand_safety": [
+    {"name": "UNREDACTED Cinema", "channel_id": "UC54Cq-4blQ0wCSbSL0lQegA", "reason": "disproportion_index alto (2.675) pero el contenido versa sobre cine adulto/censurado historico (Deep Throat, etc.): alto riesgo de desmonetizacion/restriccion de anunciantes pese a etiqueta isFamilySafe=true. Excluido sin calcular RPM."}
+  ]
+}
