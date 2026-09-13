@@ -1,0 +1,121 @@
+{
+  "generated_at": "2026-09-13T16:59:54Z",
+  "criteria_applied": {
+    "max_subscribers": 50000,
+    "subscriber_weighting": "cuanto menor, mejor puntuacion",
+    "min_disproportion_index_to_advance": 1.0,
+    "disproportion_index_formula": "outlier_score / (subscribers / 1000)",
+    "disproportion_index_note": "En este run, para canales descubiertos via get_similar_channels (que no expone outlierScore de canal) se usa como proxy el viewRatio del video mas destacado via youtube_channel_outliers. Se etiqueta explicitamente en cada superviviente.",
+    "min_rpm_usd": 3,
+    "premium_rpm_usd": 8,
+    "competition_source": "get_niche_overview (similarChannels array), umbral de saturacion: >=10 canales con similarityScore>=50"
+  },
+  "survivors": [
+    {
+      "rank": 1,
+      "channel_id": "UC0Q7UpCYp5jFRoeAcF-2nNg",
+      "name": "The Water Files",
+      "channel_url": "https://www.youtube.com/channel/UC0Q7UpCYp5jFRoeAcF-2nNg",
+      "niche": "Documental narrativo faceless de 'encuentros' con criaturas/monstruos marinos (megalodon, Loch Ness, ballenas gigantes) presentado como sucesos reales recientes, en la misma familia tematica que The Quiet Record pero con angulo de fauna/cripto-zoologia en vez de testimonio militar",
+      "style_format": "Videos cortos-medios (9-14 min), voz en off dramatica, imagenes generadas/stock + texto tipo 'noticia', sin aparicion del creador (faceless), titulos tipo cliffhanger ('X pensó que era una ballena hasta que...')",
+      "subscribers_at_capture": 2020,
+      "channel_age_days": 87,
+      "channel_created": "2026-06-18",
+      "total_videos": 48,
+      "outlier_analysis": {
+        "tool": "youtube_channel_outliers",
+        "total_outliers_detected": 8,
+        "top_outlier_video_ratio": "7.3x (Megalodon Attacked The Oil Platform, 99K views vs avgViews 13.5K del canal)",
+        "disproportion_index_proxy": 3.61,
+        "proxy_formula_used": "top_video_viewRatio / (subs/1000), NO es el outlierScore oficial de Nexlev (no disponible para canales descubiertos via similar_channels)"
+      },
+      "rpm_analysis": {
+        "videos_used": [
+          {"video_id": "QJonDZKxVjk", "title": "Megalodon Attacked The Oil Platform And The Crew Was Silenced", "views": 99548, "rpm": 4.40},
+          {"video_id": "Cekjd1OEw7g", "title": "An Underwater Drone Reached the Bottom of Loch Ness", "views": 60671, "rpm": 3.99},
+          {"video_id": "uK9bxVkQKps", "title": "A Fishing Crew Thought It Was a Whale Under the Boat", "views": 50598, "rpm": 5.14}
+        ],
+        "rpm_avg": 4.51,
+        "trend": "Consistente en rango 4.0-5.1 USD en sus 3 videos mas vistos, sin picos ni caidas extranas: senal de nicho estable, no de fluke puntual"
+      },
+      "competition_analysis": {
+        "tool": "get_niche_overview",
+        "similar_channels_found": 10,
+        "similar_channels_with_similarity_gte_50": 5,
+        "top_similar": [
+          {"name": "Maritime Incident Files", "similarity": 70},
+          {"name": "Blue Nexus", "similarity": 65},
+          {"name": "Thought Trail", "similarity": 60},
+          {"name": "Ocean Mysteries Lab", "similarity": 53},
+          {"name": "Planet Rupture", "similarity": 52},
+          {"name": "The Quiet Record", "similarity": 48, "note": "El canal semilla del run 1 aparece justo por debajo del umbral de saturacion: confirma que es un nicho adyacente, no un clon"}
+        ],
+        "saturation_level": "moderada-baja",
+        "opportunity_signal": "Casi la mitad de competencia directa (5/10 >=50%) que los otros 3 candidatos fuertes de este run (Black Snow Archives, WW2 Records Archive y Deep Sea Sleep Stories tuvieron 12/12). Track record de 48 videos con 8 outliers es la muestra mas solida de todo este run."
+      },
+      "why_opportunity": "Es el candidato con mejor equilibrio riesgo/evidencia de este run: 87 dias de historial (no es un canal de 5 videos), RPM real verificado en 3 videos distintos y consistente (~4.5 USD, sobre el minimo), y la competencia mas baja entre los candidatos con datos solidos. No alcanza el RPM premium ni el disproportion_index de The Quiet Record en el run 1, pero es la apuesta mas replicable y menos especulativa de los ~280 canales revisados en ambos runs."
+    },
+    {
+      "rank": 2,
+      "channel_id": "UCLEdewVA90z2Kqnkp_cHv1g",
+      "name": "The Leviathan Papers",
+      "channel_url": "https://www.youtube.com/channel/UCLEdewVA90z2Kqnkp_cHv1g",
+      "niche": "Mismo micro-nicho que The Quiet Record: testimonio militar/naval 'desclasificado' sobre criaturas o fenomenos marinos inexplicados, con formato casi identico (voz en off tipo documental + marco de testimonio de marina/tripulacion)",
+      "style_format": "Videos de 10-14 min, voz en off narrativa en tono de 'affidavit'/testimonio jurado, imagenes de archivo + AI, sin aparicion del creador (faceless), titulos con gancho de revelacion tardia ('...habla por fin', '...aun existe')",
+      "subscribers_at_capture": 1340,
+      "channel_age_days_approx": 13,
+      "total_videos": 6,
+      "outlier_analysis": {
+        "tool": "youtube_channel_outliers",
+        "total_outliers_detected": 1,
+        "top_outlier_video_ratio": "4.5x (The Navy Pulled Claws Out of the USS Stein in 1976, 265K views)",
+        "disproportion_index_proxy": 3.36,
+        "proxy_formula_used": "top_video_viewRatio / (subs/1000), NO es el outlierScore oficial de Nexlev"
+      },
+      "rpm_analysis": {
+        "videos_used": [
+          {"video_id": "urvsZg-5qac", "title": "The Navy Pulled Claws Out of the USS Stein in 1976 — The Man Who Kept One Finally Speaks", "views": 265073, "rpm": 4.22}
+        ],
+        "rpm_avg": 4.22,
+        "trend": "Solo 1 video con vistas suficientes para estimar RPM con confianza (el resto del catalogo tiene <55K vistas o es demasiado reciente); dato de una sola muestra, no una tendencia confirmada"
+      },
+      "competition_analysis": {
+        "tool": "get_niche_overview",
+        "similar_channels_found": 3,
+        "similar_channels_with_similarity_gte_50": 2,
+        "top_similar": [
+          {"name": "The Quiet Record", "similarity": 53, "note": "Es el propio canal semilla de este analisis, no un competidor independiente"},
+          {"name": "Deep Unknown", "similarity": 52, "note": "Canal de 7 dias y 2 suscriptores, sin trayectoria: no es competencia real todavia"},
+          {"name": "1941 Files", "similarity": 42}
+        ],
+        "saturation_level": "muy baja - la mas baja de todo el analisis (ambos runs)",
+        "opportunity_signal": "Solo 3 canales similares en total y, descontando al propio semilla y a un canal de una semana sin subs, hay CERO competencia real detectada. Es la senal de saturacion mas baja de los ~280 canales revisados hasta ahora, por debajo incluso de la que tenia el propio The Quiet Record en el run 1 (1/5 similares>=50)."
+      },
+      "why_opportunity": "Es la replica directa del patron que hizo ganador a The Quiet Record en el run 1 (mismo estilo, mismo tipo de gancho, mismo formato de duracion), descubierta precisamente porque esta muy cerca de él en el grafo de similitud - y su competencia detectada es efectivamente cero. El riesgo es que la evidencia es minima: solo 6 videos, 13 dias de vida, y un unico video viral que podria ser una anomalia puntual en vez de un patron repetible. Se recomienda vigilar su evolucion (subs, vistas de los proximos 3-4 videos) antes de tratarlo con la misma confianza que a The Quiet Record."
+    }
+  ],
+  "rejected_at_competition_stage": [
+    {
+      "name": "WW2 Records Archive",
+      "channel_id": "UC-OgC1Rb-xJlbmJMvptH1vQ",
+      "reason": "RPM real decente (4.42 avg) pero 12/12 canales similares con similarity>=50 (hasta 75): nicho de documental WW2/declasificado generico saturado (Front Intel, WW2 Vault, Hidden War, Silent Battlefield, etc.)"
+    },
+    {
+      "name": "Black Snow Archives",
+      "channel_id": "UC3-Cq-CI5kJ0csGho7iaQUA",
+      "reason": "RPM real muy fuerte y consistente (7.43 avg, casi premium) pero 12/12 similares con similarity>=50 (hasta 82): el angulo especifico 'Cold War declassified' esta tan saturado como el WW2 generico (Redacted Bloc, Cold War Tales, Cold War Chronicles, etc.)"
+    },
+    {
+      "name": "Deep Sea Sleep Stories",
+      "channel_id": "UC2OQDnKyTFoYB0JTAWrjZPw",
+      "reason": "RPM excepcional (21.17 avg, el mas alto detectado en ambos runs, gracias a videos de 2.5h tipo 'sleep documentary') pero 12/12 similares con similarity>=50 (hasta 76): confirma que documental de fauna/oceano con IA es el cluster mas saturado del panorama faceless actual"
+    }
+  ],
+  "excluded_for_data_quality": [
+    {
+      "name": "Underground",
+      "channel_id": "UCwFSGIJqv_sNvVCs67NBoNw",
+      "reason": "disproportion_index reportado de 7.037 resulto ser un artefacto: canal reciclado desde 2007 (273.781 vistas historicas acumuladas) con solo 2 videos nuevos subidos. El outlier_score de 34.13 compara esos 2 videos contra una base historica casi muerta, no representa un patron replicable desde cero."
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "run_timestamp": "2026-09-13T16:59:54Z",
+  "trigger": "Peticion de usuario: ampliar el analisis profundo previo (run 1, 2026-09-11) partiendo de The Quiet Record con get_similar_channels level=3, y explorando 3 sub-nichos nuevos no tocados antes: true crime maritimo, expedientes militares desclasificados, fenomenos inexplicados de la naturaleza.",
+  "seed_used_for_similar_channels_level3": {
+    "name": "The Quiet Record",
+    "channel_id": "UCHR33aJzt9_R1w9Z83kUBAQ",
+    "subscribers_at_this_run": 2750,
+    "videos_at_this_run": 20,
+    "note": "Canal sigue creciendo de forma consistente desde el run 1 (1770->2610->2750 subs en ~2 dias entre snapshots)"
+  },
+  "new_subniches_explored_via_search_niche_finder_channels": [
+    "maritime true crime deep sea disappearances shipwreck mystery",
+    "declassified military files secret operations documents",
+    "unexplained natural phenomena mysterious nature events"
+  ],
+  "funnel": {
+    "stage_1_similar_channels_level3_returned": 66,
+    "stage_1b_new_after_dedup_vs_run1_pool_subs_lt_50k": 40,
+    "stage_2_niche_finder_3_subniches_returned": 120,
+    "stage_3_ranked_by_disproportion_index_or_views_subs_ratio_proxy": 160,
+    "stage_4_probed_with_youtube_channel_outliers_or_about": 8,
+    "stage_5_passed_rpm_gte_3usd_real": 5,
+    "stage_6_checked_competition_via_niche_overview": 5,
+    "stage_7_passed_low_moderate_saturation": 2,
+    "final_survivors": 2
+  },
+  "thresholds_applied": {
+    "max_subscribers": 50000,
+    "min_rpm_usd": 3,
+    "premium_rpm_usd": 8,
+    "saturation_flag_similar_channels_gte_50_similarity_count": 10,
+    "note_on_outlier_metric": "Para candidatos descubiertos via search_niche_finder_channels se uso el campo oficial outlierScore (a nivel canal) de Nexlev, igual que en el run 1. Para candidatos descubiertos via get_similar_channels (que no devuelve ese campo) se uso como proxy el viewRatio del video outlier mas fuerte via youtube_channel_outliers (video/promedio del canal). Ambos se etiquetan explicitamente en los datos para no mezclarlos sin avisar."
+  },
+  "tools_used": [
+    "get_similar_channels (level=3, async) + get_similar_channels_status, seed=The Quiet Record",
+    "search_niche_finder_channels (isFaceless=true, maxSubscribers=50000, channelLanguage=[en]) x3 sub-nichos",
+    "youtube_channel_outliers",
+    "youtube_channel_about",
+    "youtube_channel_videos (sort_by=popular)",
+    "get_video_rpm",
+    "get_niche_overview (async) + get_niche_overview_status"
+  ],
+  "candidates_probed_in_detail": [
+    {"name": "Underground", "channel_id": "UCwFSGIJqv_sNvVCs67NBoNw", "disproportion_index_reported": 7.037, "verdict": "excluido", "reason": "Canal reciclado/reutilizado desde 2007-07-26 (273.781 vistas historicas) con solo 2 videos nuevos subidos: el outlier_score de 34.13 es un artefacto de comparar 2 videos nuevos contra una base historica casi muerta, no una senal real de nicho caliente. No es replicable como estrategia de canal nuevo."},
+    {"name": "WW2 Records Archive", "channel_id": "UC-OgC1Rb-xJlbmJMvptH1vQ", "disproportion_index_reported": 2.845, "rpm_avg_usd": 4.42, "rpm_videos_used": ["qu_JLBTS_Do", "rtK82ft9UVE", "VOuiPkYdm34"], "verdict": "rechazado_por_competencia", "reason": "12/12 canales similares con similarity>=50 (53-75): Front Intel, Operation Unknown, WW2 Vault, Hidden War, Silent Battlefield, Iron Front W2, Echoes of War, WW2 Fate, Chronoborn, War Stories Uncovered, WW2 STATION, Wartime Memory. Nicho de documental WW2/declasificado generico completamente saturado."},
+    {"name": "Black Snow Archives", "channel_id": "UC3-Cq-CI5kJ0csGho7iaQUA", "disproportion_index_proxy": 5.3, "rpm_avg_usd": 7.43, "rpm_videos_used": ["PmepzwTs9ec", "4zRJiL01-JY", "pv5uIyNdK2s"], "verdict": "rechazado_por_competencia", "reason": "RPM real muy fuerte y consistente (7.91/6.51/7.86) pero 12/12 canales similares con similarity>=50 (59-82): Redacted Bloc, Cold War Tales, Cold War Chronicles, Cold War Untold Stories, Cold War Industries, Cold War Blackfield, Cold Iron, Military Code, Warsaw Vault, Rulah, The Brush Pass, Apex Engineering. El angulo especifico 'Cold War declassified' esta tan saturado como el WW2 generico."},
+    {"name": "Deep Sea Sleep Stories", "channel_id": "UC2OQDnKyTFoYB0JTAWrjZPw", "disproportion_index_proxy": 1.92, "rpm_avg_usd": 21.17, "rpm_videos_used": ["6BfEeDUVtV0", "-duD06Z_MOM"], "verdict": "rechazado_por_competencia", "reason": "RPM excepcional (26.53 y 15.81 USD, el mas alto de todo el analisis - formato de 2.5h tipo 'sleep documentary' con alta densidad publicitaria) y 228 videos con cadencia muy alta, pero 12/12 canales similares con similarity>=50 (58-76): Fishy Frank, Prehistoria, The Snoozy Scientist, BIOLOGICAL LIMIT, ES Science, Bright Side Creepy Creatures, Primal Killers, Animals Unsolved, Boring Planet, Spinosnack, Below The Blue, Unreal Planet Earth. Confirma el patron ya detectado en el run 1: documental de vida salvaje/oceano con IA es el cluster mas saturado del panorama faceless actual."},
+    {"name": "The Water Files", "channel_id": "UC0Q7UpCYp5jFRoeAcF-2nNg", "disproportion_index_proxy": 3.61, "rpm_avg_usd": 4.51, "rpm_videos_used": ["QJonDZKxVjk", "Cekjd1OEw7g", "uK9bxVkQKps"], "verdict": "SUPERVIVIENTE", "reason": "48 videos con 8 outliers detectados (ratios 2.6x-7.3x), RPM real consistente en 3 videos (4.40/3.99/5.14), y solo 5 de 10 canales similares con similarity>=50 (Maritime Incident Files 70, Blue Nexus 65, Thought Trail 60, Ocean Mysteries Lab 53, Planet Rupture 52) - The Quiet Record aparece como similar al 48%, justo por debajo del umbral, confirmando que es un nicho adyacente pero no identico."},
+    {"name": "The Leviathan Papers", "channel_id": "UCLEdewVA90z2Kqnkp_cHv1g", "disproportion_index_proxy": 3.36, "rpm_avg_usd": 4.22, "rpm_videos_used": ["urvsZg-5qac"], "verdict": "SUPERVIVIENTE", "reason": "Solo 3 canales similares en total (el nicho mas pequeno detectado en todo el run) y unicamente 2 con similarity>=50: The Quiet Record (53%, el propio semilla del que deriva) y Deep Unknown (52%, canal de 7 dias y 2 subs, sin trayectoria real). Es decir: practicamente sin competencia genuina. Dato limitado (solo 6 videos, 1 outlier confirmado) por ser un canal muy joven, se marca como hallazgo de alta convicción pero bajo volumen de evidencia."}
+  ],
+  "notes": [
+    "El cluster 'documental de fauna/oceano con IA' (Deep Sea Sleep Stories esta vez, Wild Disclosure/UNREDACTED Cinema/wildlife channels en el run 1) se confirma como el mas saturado de forma persistente entre ambos runs.",
+    "El cluster 'declasificado militar/Cold War' (WW2 Records Archive y Black Snow Archives esta vez) resulto tambien saturado en sus dos variantes probadas (WW2 generico y Cold War especifico), a pesar de RPM fuerte en ambos casos - descartar como categoria completa por ahora.",
+    "El sub-nicho de 'testimonios navales/militares con criatura o fenomeno inexplicado' que originó The Quiet Record en el run 1 sigue siendo, con diferencia, el menos competido de los ~280 canales revisados entre ambos runs: tanto el propio Quiet Record (1/5 similares>=50 en el run 1) como los dos supervivientes de este run (Water Files 5/10, Leviathan Papers 2/3) tienen ordenes de magnitud menos competidores directos que cualquier otro cluster probado.",
+    "No se encontraron candidatos viables en 'true crime maritimo' mas alla de The Water Files (que es mas 'criptido/monstruo marino' que 'crimen'), ni en 'fenomenos inexplicados de la naturaleza' generico (dominado por canales de vida salvaje ya saturados o por el artefacto de canal reciclado 'Underground')."
+  ]
+}
