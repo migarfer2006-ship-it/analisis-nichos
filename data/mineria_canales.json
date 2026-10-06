@@ -1,0 +1,710 @@
+{
+ "fecha": "2026-10-06",
+ "canales": [
+  {
+   "canal": "Cronotierra",
+   "channel_id": "UC1THpm3yaC55DWKW4NsJLxw",
+   "subs": 44400,
+   "n_videos": 100,
+   "top": [
+    {
+     "id": "F8iahGWtifE",
+     "titulo": "Así Viven Estas Tribus Colgadas Sobre el Vacío a Casi 4.000 Metros | Documental Completo",
+     "visitas": 2793453,
+     "min": 43,
+     "dias": 233,
+     "vps": 62.92
+    },
+    {
+     "id": "TOd5dX1-oA0",
+     "titulo": "Dentro de los Ríos Más Letales del Amazonas: Así Sobreviven Estas Tribus | Documental Completo",
+     "visitas": 1001518,
+     "min": 35,
+     "dias": 200,
+     "vps": 22.56
+    },
+    {
+     "id": "VBDiAaKRSUE",
+     "titulo": "¿Por Qué Viven Aquí? Tribus Etíopes en Territorios Donde Nadie Debería Estar",
+     "visitas": 552435,
+     "min": 34,
+     "dias": 240,
+     "vps": 12.44
+    },
+    {
+     "id": "EiTyg5W1JcA",
+     "titulo": "Así Viven Estas Tribus Donde la Tierra NO Existe | Documental Completo",
+     "visitas": 519574,
+     "min": 35,
+     "dias": 196,
+     "vps": 11.7
+    },
+    {
+     "id": "3njeHtFuC7o",
+     "titulo": "Así Viven Estas Tribus Colgadas Sobre el Vacío a Más de 3.500 Metros | Documental Completo",
+     "visitas": 510593,
+     "min": 29,
+     "dias": 212,
+     "vps": 11.5
+    },
+    {
+     "id": "BWiJlqigtKg",
+     "titulo": "Así Sobreviven estas Tribus de Colombia Entre Depredadores y Fronteras Ocultas | Documental Completo",
+     "visitas": 451818,
+     "min": 40,
+     "dias": 81,
+     "vps": 10.18
+    },
+    {
+     "id": "wFxy6JnT8eo",
+     "titulo": "Así Sobreviven Estas Tribus a los Depredadores Más Letales del Amazonas | Documental Completo",
+     "visitas": 432357,
+     "min": 40,
+     "dias": 217,
+     "vps": 9.74
+    },
+    {
+     "id": "lFveW9ou-Ec",
+     "titulo": "Así Viven las Tribus en la Selva de Papúa Entre los Depredadores Más Letales | Documental Completo",
+     "visitas": 424880,
+     "min": 41,
+     "dias": 223,
+     "vps": 9.57
+    },
+    {
+     "id": "pP2PPqo_CMo",
+     "titulo": "Tribus de África: Así Detectan el Peligro Antes de Verlo  | Documental Completo",
+     "visitas": 419822,
+     "min": 36,
+     "dias": 168,
+     "vps": 9.46
+    },
+    {
+     "id": "nFQSU8B8lz4",
+     "titulo": "Supervivencia Real en la Selva: 8 Tribus Frente a Serpientes Gigantes",
+     "visitas": 417249,
+     "min": 31,
+     "dias": 266,
+     "vps": 9.4
+    }
+   ]
+  },
+  {
+   "canal": "Terra em Sigilo",
+   "channel_id": "UC928bRWdsEeT4FtTi_av7fA",
+   "subs": 4170,
+   "n_videos": 18,
+   "top": [
+    {
+     "id": "ajeTlV29XGg",
+     "titulo": "60km de Chão Se Abriram em 10 Dias — E Ninguém Te Contou o Que Tinha Dentro",
+     "visitas": 2448647,
+     "min": 21,
+     "dias": 45,
+     "vps": 587.21
+    },
+    {
+     "id": "Ph-mb7PSsek",
+     "titulo": "65 km se Abriram em Menos de 1 Semana — Um Novo Oceano Está Nascendo na África?",
+     "visitas": 288916,
+     "min": 24,
+     "dias": 5,
+     "vps": 69.28
+    },
+    {
+     "id": "GaxoFad7JHc",
+     "titulo": "25 km de Chão Se Abriram em 3 Dias: O Que Saiu da Fenda e Colocou o Mundo em Alerta?",
+     "visitas": 235289,
+     "min": 20,
+     "dias": 9,
+     "vps": 56.42
+    },
+    {
+     "id": "pchV1MV57gw",
+     "titulo": "Além da Fenda Africana: Por que Outras Grandes Rachaduras Estão Surgindo no Mundo?",
+     "visitas": 46269,
+     "min": 18,
+     "dias": 41,
+     "vps": 11.1
+    },
+    {
+     "id": "TgC9mVozDX0",
+     "titulo": "O Dia em Que o Mediterrâneo Secou: O Que a Fenda Geológica Revelou no Fundo do Mar?",
+     "visitas": 29639,
+     "min": 21,
+     "dias": 30,
+     "vps": 7.11
+    },
+    {
+     "id": "Bby7_x5O3PI",
+     "titulo": "Por que a Geologia do Estreito de Ormuz é uma \"Armadilha\" para a Engenharia Moderna?",
+     "visitas": 23620,
+     "min": 22,
+     "dias": 46,
+     "vps": 5.66
+    },
+    {
+     "id": "gTuHexYwOyQ",
+     "titulo": "1.400 Metros da Montanha Sumiram em 24 Horas — E o Que Aconteceu Depois Mudou o Clima",
+     "visitas": 11739,
+     "min": 25,
+     "dias": 23,
+     "vps": 2.82
+    },
+    {
+     "id": "6KJxLH0_viI",
+     "titulo": "70 km de Crosta Sob o Nepal — E o Choque das Placas Esconde Algo Muito Mais Profundo",
+     "visitas": 6047,
+     "min": 16,
+     "dias": 13,
+     "vps": 1.45
+    },
+    {
+     "id": "XB9avna8yMQ",
+     "titulo": "4,4 Bilhões de Anos Estão Escondidos na Austrália — E o Deserto Preservou o Passado da Terra",
+     "visitas": 5343,
+     "min": 20,
+     "dias": 27,
+     "vps": 1.28
+    },
+    {
+     "id": "zx-SP5G4v1A",
+     "titulo": "A Falha Submarina de 1.000 km que Pode Paralisar 25% do Comércio Mundial",
+     "visitas": 4886,
+     "min": 21,
+     "dias": 38,
+     "vps": 1.17
+    }
+   ]
+  },
+  {
+   "canal": "Discovery Vault",
+   "channel_id": "UCxPOkcWzzEepSSRlUgXz3GQ",
+   "subs": 4230,
+   "n_videos": 79,
+   "top": [
+    {
+     "id": "ZuI-Fyb0fS8",
+     "titulo": "A Lander Captured Something Alive in the Mariana Trench at 27,000 Feet — It shouldn't Exist",
+     "visitas": 1187459,
+     "min": 24,
+     "dias": 144,
+     "vps": 280.72
+    },
+    {
+     "id": "j88kP13Y-yE",
+     "titulo": "AI Just Cracked the Alcatraz Escape After 63 Years — And It Changes Everything We Were Told",
+     "visitas": 396767,
+     "min": 27,
+     "dias": 143,
+     "vps": 93.8
+    },
+    {
+     "id": "zKeniXuCqn0",
+     "titulo": "The Giant Spider of Congo Builds Traps That Catch Deer — And Science Can't Explain How It Breathes",
+     "visitas": 115957,
+     "min": 18,
+     "dias": 197,
+     "vps": 27.41
+    },
+    {
+     "id": "4E33-Ia_OX4",
+     "titulo": "Navy Code-Breaker Heard the Bigfoot Recordings — He Said \"It's Definitely a Language",
+     "visitas": 83425,
+     "min": 15,
+     "dias": 176,
+     "vps": 19.72
+    },
+    {
+     "id": "HdpVv7JkR5I",
+     "titulo": "AI Says Puma Punku Was Built By Aliens — A UC Berkeley Archaeologist Just Proved Otherwise",
+     "visitas": 37808,
+     "min": 22,
+     "dias": 94,
+     "vps": 8.94
+    },
+    {
+     "id": "k7HdixLlsyk",
+     "titulo": "Patterson's Own Son Just Confessed the Bigfoot Film Was Fake — Gimlin Still Won't Admit It",
+     "visitas": 7909,
+     "min": 17,
+     "dias": 182,
+     "vps": 1.87
+    },
+    {
+     "id": "EEY2TjkaN2Q",
+     "titulo": "A Diver in Lake Tahoe Found Something That Shouldn't Still Exist",
+     "visitas": 6927,
+     "min": 19,
+     "dias": 126,
+     "vps": 1.64
+    },
+    {
+     "id": "SgE8z9WSk68",
+     "titulo": "Bigfoot Has Over 60 Names — Every Native American Tribe Knew It Was Real",
+     "visitas": 6128,
+     "min": 15,
+     "dias": 160,
+     "vps": 1.45
+    },
+    {
+     "id": "9mdP54OOQGQ",
+     "titulo": "The Black Dahlia Case Has New Evidence — What 1947 Investigators Missed",
+     "visitas": 5469,
+     "min": 30,
+     "dias": 96,
+     "vps": 1.29
+    },
+    {
+     "id": "0_df1dIFOyc",
+     "titulo": "China Released Wild Horses Into A Dead Desert In 1986 — What Happened Next Shocked Ecologists",
+     "visitas": 4878,
+     "min": 25,
+     "dias": 124,
+     "vps": 1.15
+    }
+   ]
+  },
+  {
+   "canal": "Discovery 10",
+   "channel_id": "UCevxX1YC-Iiv4upfCC5A2kQ",
+   "subs": 1930,
+   "n_videos": 27,
+   "top": [
+    {
+     "id": "e2We8RFZ5Hw",
+     "titulo": "10 Terrifying Discoveries In Siberia That Scientists Can’t Explain",
+     "visitas": 426288,
+     "min": 41,
+     "dias": 236,
+     "vps": 220.87
+    },
+    {
+     "id": "-5k36A9FRiA",
+     "titulo": "12 Terrifying Discoveries In The Amazon That Terrified The World",
+     "visitas": 51261,
+     "min": 22,
+     "dias": 239,
+     "vps": 26.56
+    },
+    {
+     "id": "Ed_kaSscYco",
+     "titulo": "7 Disturbing Discoveries In The Congo That Shocked The World",
+     "visitas": 38342,
+     "min": 28,
+     "dias": 246,
+     "vps": 19.87
+    },
+    {
+     "id": "geg6RONjqMM",
+     "titulo": "12 Terrifying Discoveries In Namibia's Skeleton Coast That Terrified The World",
+     "visitas": 29479,
+     "min": 18,
+     "dias": 30,
+     "vps": 15.27
+    },
+    {
+     "id": "vyjC1Pl9xYY",
+     "titulo": "10 Deadliest Creatures Found In The Amazon That Shocked The World",
+     "visitas": 28886,
+     "min": 25,
+     "dias": 213,
+     "vps": 14.97
+    },
+    {
+     "id": "pAnL1PSoF8o",
+     "titulo": "7 Disturbing Discoveries In The Amazon That Shocked The World",
+     "visitas": 28788,
+     "min": 36,
+     "dias": 249,
+     "vps": 14.92
+    },
+    {
+     "id": "ajtFiBkJFIU",
+     "titulo": "20 Remarkable Animals Found in the Amazon Rainforest",
+     "visitas": 9294,
+     "min": 43,
+     "dias": 216,
+     "vps": 4.82
+    },
+    {
+     "id": "EOB3zYhqNiY",
+     "titulo": "Amazon's Invisible Giants: 10 Incredible Survival Secrets",
+     "visitas": 8185,
+     "min": 31,
+     "dias": 170,
+     "vps": 4.24
+    },
+    {
+     "id": "bQjipz5vklE",
+     "titulo": "15 Terrifying Discoveries In The Congo That Terrified The World",
+     "visitas": 7857,
+     "min": 22,
+     "dias": 10,
+     "vps": 4.07
+    },
+    {
+     "id": "2TJ546vFFNQ",
+     "titulo": "15 Terrifying Discoveries In The Amazon Rainforest That Shocked The World",
+     "visitas": 6021,
+     "min": 22,
+     "dias": 17,
+     "vps": 3.12
+    }
+   ]
+  },
+  {
+   "canal": "Paso a Paso",
+   "channel_id": "UCri28z7D1Xbgy2WDoq45QYw",
+   "subs": 1310,
+   "n_videos": 28,
+   "top": [
+    {
+     "id": "5vgbSGlyRl0",
+     "titulo": "Lo que Hay Realmente Bajo el Hielo de la Antártida",
+     "visitas": 228196,
+     "min": 28,
+     "dias": 46,
+     "vps": 174.2
+    },
+    {
+     "id": "yvK5czzsXKo",
+     "titulo": "Hasta Dónde ha Llegado el Ser Humano Perforando Bajo Tierra (el pozo de Kola)",
+     "visitas": 186454,
+     "min": 34,
+     "dias": 75,
+     "vps": 142.33
+    },
+    {
+     "id": "1NgTLbj8630",
+     "titulo": "Lo que Hay Realmente en el Núcleo de la Tierra",
+     "visitas": 72141,
+     "min": 31,
+     "dias": 68,
+     "vps": 55.07
+    },
+    {
+     "id": "R-_XWoup3cY",
+     "titulo": "Lo que Ocurre Dentro de un Reactor Nuclear en Funcionamiento",
+     "visitas": 25769,
+     "min": 33,
+     "dias": 66,
+     "vps": 19.67
+    },
+    {
+     "id": "UwZV0yA50NY",
+     "titulo": "Lo que le Ocurrió al Cuerpo de las Víctimas de Pompeya en Segundos",
+     "visitas": 10738,
+     "min": 33,
+     "dias": 64,
+     "vps": 8.2
+    },
+    {
+     "id": "LgIl5J8C94o",
+     "titulo": "Lo Que Hay Realmente Dentro de la Fosa de las Marianas",
+     "visitas": 9537,
+     "min": 38,
+     "dias": 35,
+     "vps": 7.28
+    },
+    {
+     "id": "dEhTcN5wUI4",
+     "titulo": "Hasta Dónde Ha Llegado el Ser Humano Cavando Oro",
+     "visitas": 7879,
+     "min": 36,
+     "dias": 4,
+     "vps": 6.01
+    },
+    {
+     "id": "bb1cj9K_zic",
+     "titulo": "Hasta Dónde Puede Bajar un Submarino Antes de que la Presión lo Aplaste",
+     "visitas": 2711,
+     "min": 30,
+     "dias": 48,
+     "vps": 2.07
+    },
+    {
+     "id": "kahhZ9KM1vI",
+     "titulo": "La Física detrás de un Tornado — Lo que Ocurre Dentro del Embudo",
+     "visitas": 1615,
+     "min": 33,
+     "dias": 72,
+     "vps": 1.23
+    },
+    {
+     "id": "gvlit9K3pWo",
+     "titulo": "Hasta Dónde ha Llegado el Ser Humano en el Fondo del Océano",
+     "visitas": 1583,
+     "min": 26,
+     "dias": 54,
+     "vps": 1.21
+    }
+   ]
+  },
+  {
+   "canal": "Deep Life Science",
+   "channel_id": "UCeR-3EgcthqGwQcR9VjRfow",
+   "subs": 13900,
+   "n_videos": 52,
+   "top": [
+    {
+     "id": "snCdE24T-8w",
+     "titulo": "What Exists in the Deepest Place on Earth? | Mariana Trench",
+     "visitas": 2021851,
+     "min": 60,
+     "dias": 164,
+     "vps": 145.46
+    },
+    {
+     "id": "sCmzHP3RK1g",
+     "titulo": "Why This TERRIFYING Ocean Giant Would Be Crushed By Its Own Body",
+     "visitas": 284554,
+     "min": 47,
+     "dias": 114,
+     "vps": 20.47
+    },
+    {
+     "id": "di7XCHDM-34",
+     "titulo": "We Were Wrong About The Oldest Animals On Earth",
+     "visitas": 254886,
+     "min": 30,
+     "dias": 248,
+     "vps": 18.34
+    },
+    {
+     "id": "a9LUmvpHPg8",
+     "titulo": "Why an Orca's Brain Beats Every Animal on Earth But One",
+     "visitas": 180908,
+     "min": 34,
+     "dias": 106,
+     "vps": 13.01
+    },
+    {
+     "id": "Pi48FX9m6Cc",
+     "titulo": "Why Deep Sea Predators Get Creepier The Deeper You Go",
+     "visitas": 115601,
+     "min": 56,
+     "dias": 137,
+     "vps": 8.32
+    },
+    {
+     "id": "TDWS1r0zR4o",
+     "titulo": "The Terrifying Things Found Inside Sperm Whales",
+     "visitas": 86802,
+     "min": 32,
+     "dias": 72,
+     "vps": 6.24
+    },
+    {
+     "id": "Sl0KCLWkKvk",
+     "titulo": "The Terrifying Truth of the Great White Shark... And It's Disturbing",
+     "visitas": 76579,
+     "min": 45,
+     "dias": 99,
+     "vps": 5.51
+    },
+    {
+     "id": "sOfE7qZUmkM",
+     "titulo": "Why The Ultimate Deep Sea Terror Refuses to Hunt Humans",
+     "visitas": 52604,
+     "min": 39,
+     "dias": 133,
+     "vps": 3.78
+    },
+    {
+     "id": "Fjc8b1I7FM0",
+     "titulo": "Why The Ocean Gets TERRIFYING When Orcas Are Hunting",
+     "visitas": 33134,
+     "min": 41,
+     "dias": 87,
+     "vps": 2.38
+    },
+    {
+     "id": "qruitKHmlx0",
+     "titulo": "Nothing About The Orca's BIGGEST Fear Is Normal... Here's Why",
+     "visitas": 30891,
+     "min": 32,
+     "dias": 66,
+     "vps": 2.22
+    }
+   ]
+  },
+  {
+   "canal": "See It First",
+   "channel_id": "UCtJ6zyjGNN-5xSO8xwcTBGA",
+   "subs": 20500,
+   "n_videos": 21,
+   "top": [
+    {
+     "id": "qLoZAHdLHJo",
+     "titulo": "Journey to the Deepest Place on Earth",
+     "visitas": 2752176,
+     "min": 37,
+     "dias": 198,
+     "vps": 134.25
+    },
+    {
+     "id": "Kl1cgP4nqoA",
+     "titulo": "What They Found Hidden in the Amazon",
+     "visitas": 312569,
+     "min": 16,
+     "dias": 380,
+     "vps": 15.25
+    },
+    {
+     "id": "bQA8BkAafRQ",
+     "titulo": "Your Brain Wasn't Built for This",
+     "visitas": 24090,
+     "min": 15,
+     "dias": 359,
+     "vps": 1.18
+    },
+    {
+     "id": "WJVFb-XqEdU",
+     "titulo": "They Found Alien Life Sealed Underground",
+     "visitas": 22295,
+     "min": 12,
+     "dias": 324,
+     "vps": 1.09
+    },
+    {
+     "id": "p7x16eedKTI",
+     "titulo": "Inside the Ocean Zone Where Almost Nothing Survives",
+     "visitas": 17327,
+     "min": 24,
+     "dias": 268,
+     "vps": 0.85
+    },
+    {
+     "id": "SwMJfj25Mag",
+     "titulo": "The Deepest Sea Creatures We Were Never Meant To See",
+     "visitas": 9024,
+     "min": 20,
+     "dias": 171,
+     "vps": 0.44
+    },
+    {
+     "id": "MGEWHTbr1rU",
+     "titulo": "Journey to the Deep Sea's Most Deadly Places",
+     "visitas": 5722,
+     "min": 21,
+     "dias": 156,
+     "vps": 0.28
+    },
+    {
+     "id": "Lj9FsmoKZkA",
+     "titulo": "The Most Mysterious Light Show on Earth",
+     "visitas": 5030,
+     "min": 21,
+     "dias": 226,
+     "vps": 0.25
+    },
+    {
+     "id": "9FVZzMYKOJQ",
+     "titulo": "Deep Sea Descent Documentary for Sleep | Into the Dark",
+     "visitas": 4095,
+     "min": 35,
+     "dias": 184,
+     "vps": 0.2
+    },
+    {
+     "id": "31YOiP2-YSE",
+     "titulo": "7 Lost Places the World Forgot",
+     "visitas": 3451,
+     "min": 11,
+     "dias": 352,
+     "vps": 0.17
+    }
+   ]
+  },
+  {
+   "canal": "Inmenso Mundo Natural",
+   "channel_id": "UCjKZXiXPwIhkz5trHANMgXw",
+   "subs": 9840,
+   "n_videos": 31,
+   "top": [
+    {
+     "id": "vUqqfWM7Ki8",
+     "titulo": "Por Qué la Orca Domina Todo el Océano...Excepto a Este Gigante",
+     "visitas": 2151938,
+     "min": 45,
+     "dias": 82,
+     "vps": 218.69
+    },
+    {
+     "id": "R23OAJxtBXc",
+     "titulo": "La Verdad Oculta de las Quince Inmersiones al Punto Más Profundo del Planeta",
+     "visitas": 1252266,
+     "min": 43,
+     "dias": 46,
+     "vps": 127.26
+    },
+    {
+     "id": "R4_RnTfFrKY",
+     "titulo": "Por qué la Fosa de las Marianas Oculta Monstruos Reales",
+     "visitas": 835396,
+     "min": 20,
+     "dias": 141,
+     "vps": 84.9
+    },
+    {
+     "id": "Cp3kLB122Jo",
+     "titulo": "Nos equivocamos con el megalodón durante 180 años",
+     "visitas": 315867,
+     "min": 47,
+     "dias": 42,
+     "vps": 32.1
+    },
+    {
+     "id": "ETIWZbnD3vA",
+     "titulo": "El Rasgo Humano que un Pulpo No Debería Tener",
+     "visitas": 292059,
+     "min": 38,
+     "dias": 22,
+     "vps": 29.68
+    },
+    {
+     "id": "mvIdHV6o-OY",
+     "titulo": "Nos Equivocamos con lo que le Pasa a un Pez al Subir del Abismo",
+     "visitas": 267474,
+     "min": 30,
+     "dias": 27,
+     "vps": 27.18
+    },
+    {
+     "id": "oqGntomrhOs",
+     "titulo": "El Error de 50 Años que Nos Impidió Filmar al Kraken Vivo",
+     "visitas": 221144,
+     "min": 44,
+     "dias": 39,
+     "vps": 22.47
+    },
+    {
+     "id": "tCuJdWdVHhE",
+     "titulo": "Nos Equivocamos con la Cabeza del Cachalote Durante 400 Años",
+     "visitas": 110654,
+     "min": 48,
+     "dias": 32,
+     "vps": 11.25
+    },
+    {
+     "id": "PJfizyQs7GU",
+     "titulo": "Los 3 Cazadores Más Letales del Océano Ya Saben Qué Eres. Por Eso Sigues Vivo.",
+     "visitas": 53126,
+     "min": 45,
+     "dias": 36,
+     "vps": 5.4
+    },
+    {
+     "id": "z-zF7fBmfEM",
+     "titulo": "La Orca no le Teme a Nada en el Océano... Excepto a Esto",
+     "visitas": 36158,
+     "min": 19,
+     "dias": 52,
+     "vps": 3.67
+    }
+   ]
+  }
+ ],
+ "unidades": 31
+}

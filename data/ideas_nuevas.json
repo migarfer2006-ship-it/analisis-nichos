@@ -1,0 +1,23 @@
+{
+ "angulos": {
+  "EL TAPÓN DEL DARIÉN | La Selva Más Peligrosa que el Hombre No Ha Podido Domar | Documental 4k": "lugar inexplorado / geografía-ingeniería",
+  "O TAMPÃO DE DARIÉN: A Selva que o Mundo Nunca Conseguiu Cruzar | Documentário em 4K": "lugar inexplorado / geografía-ingeniería (doblaje al portugués)",
+  "Así Viven Estas Tribus en el Tapón del Darién, Donde la Carretera NO Existe | Documental Completo": "tribus + geografía-ingeniería",
+  "Never-before-seen footage of uncontacted tribe warriors | Paul Rosolie and Lex Fridman": "tribus (probablemente Amazonas, no Nueva Guinea: verificar)",
+  "What's Hidden Under the Jungles of New Guinea?": "lugar inexplorado / naturaleza",
+  "1 IN A BILLION TRIBE SCIENTISTS Can't Explain: Their Lives Break Every Law of Science": "tribus"
+ },
+ "nota_darien": "Por los títulos, el Darién que más visitas hace gira sobre geografía/ingeniería (el tapón que impide la carretera) y 'selva que nadie cruza', NO sobre migración. Solo 1 vídeo de 15 trata la crisis migratoria en el título (Punto de Quiebre, 11.325 visitas, 173 subs); la migración aparece como contexto, no como gancho. Ángulos deducidos del título; no he visto los vídeos.",
+ "ideas": [
+  ["¿Por qué Etiopía abrió una grieta de 60 km en 10 días y un océano nace en África?", "Terra em Sigilo (4.170 subs): 2.448.647 visitas en 45 días (587x), 21 min", "bajo: un solo suceso; sus otros vídeos del tema caen a 46K; solapa con Danakil (idea 6)"],
+  ["¿Por qué el Amazonas esconde ciudades enteras bajo la selva (valle del Upano, Ecuador)?", "See It First (20.500 subs): 312.569 visitas en 380 días (15x), 16 min; la descripción cita el valle del Upano", "medio-alto: LiDAR da material nuevo; ojo, el vídeo base dura solo 16 min"],
+  ["¿Por qué la Costa de los Esqueletos de Namibia, 480 km donde la corriente fría choca con el desierto, ha engullido barcos?", "Discovery 10 (1.930 subs): 29.479 visitas en 30 días (15x), 18 min", "alto en material; dato de demanda débil (1 vídeo reciente)"],
+  ["¿Por qué La Lindosa, en Colombia, guarda pinturas rupestres de hace miles de años?", "Cronotierra (44.400 subs): 451.818 visitas en 81 días (10x), 40 min; la descripción cita La Lindosa", "medio: el vídeo es un recopilatorio de varios territorios, no solo La Lindosa"],
+  ["¿Por qué el río Hirviente del Amazonas peruano hierve sin volcán cerca?", "Discovery 10 (1.930 subs): 28.886 visitas en 213 días (15x), 25 min; la descripción lo menciona", "bajo: un solo río; sirve como capítulo, no como canal"],
+  ["¿Por qué el lago Kivu (Congo-Ruanda) puede liberar gas letal bajo 2 millones de personas?", "Discovery 10 (1.930 subs): 38.342 visitas en 246 días (20x), 28 min, 'Congo'; la descripción habla de un riesgo geológico bajo 2 M de personas (Kivu es mi deducción)", "medio; engancha con el Congo de la referencia; confirmar que el vídeo base trata de Kivu"],
+  ["¿Por qué Puma Punku, en Bolivia, se ha reconstruido en 3D y no es obra de extraterrestres?", "Discovery Vault (4.230 subs): 37.808 visitas en 94 días (9x), 22 min", "medio-bajo: tema ya muy tratado; el canal repite fórmulas de 'IA demuestra'"],
+  ["¿Por qué las víctimas de Pompeya murieron en cuestión de segundos?", "Paso a Paso (1.310 subs): 10.738 visitas en 64 días (8x), 33 min", "alto en material; lugar muy trillado, señal baja"],
+  ["¿Por qué la cueva de Movile (Rumanía) estuvo sellada 5 millones de años con vida única?", "See It First (20.500 subs): 22.295 visitas en 324 días (1,1x), 12 min — por debajo del umbral 5x", "bajo: una sola cueva y señal débil; la incluyo solo por el patrón 'lugar sellado'"],
+  ["¿Por qué hay pueblos etíopes viviendo a miles de metros de altitud donde nadie debería estar?", "Cronotierra (44.400 subs): 552.435 visitas en 240 días (12x), 34 min; lugar exacto NO confirmado en título ni descripción", "desconocido: hay que identificar el lugar concreto antes de escribirlo"]
+ ]
+}
