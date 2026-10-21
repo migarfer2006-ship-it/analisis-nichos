@@ -1,0 +1,147 @@
+{
+  "fecha": "2026-10-21",
+  "fuente": "Nexlev MCP (search_niche_finder_channels, faceless_outliers_videos, search_videos, search_viral_videos_small_channels, check_faceless_channel, check_channel_monetization, get_similar_channels nivel 3)",
+  "metodo": [
+    "Barrido numérico: faceless + monetizado + <50K subs + outlier>=3 + RPM>=8 + creado desde 2025-06 (inglés): 52 canales. Mismo barrido en de/fr y es con RPM mínimo 3 / outlier 2.",
+    "Para cada cluster candidato: búsqueda semántica (score>=0.55, canales creados desde 2024) para contar clones, y canales similares nivel 3 para los finalistas.",
+    "Barrido de outliers faceless por idioma (faceless_outliers_videos): portugués 456, alemán 285, ruso 882, francés 97, italiano 24; árabe, hindi, japonés, coreano y turco devuelven 0 en Nexlev.",
+    "Verificación vídeo a vídeo (search_videos por canal) de los finalistas."
+  ],
+  "avisos": [
+    "RPM = estimación de Nexlev (rpm.total), no dato del canal; varía con la audiencia geográfica.",
+    "Las fechas por vídeo de Nexlev parecen aproximadas (muchas caen el día 19); la antigüedad del canal sale de channelCreationDate.",
+    "'Competidores con tracción' = canales del cluster creados desde 2024 con >=20K visitas medias por vídeo u outlier>=2. Los clones con <5K visitas medias se cuentan aparte.",
+    "Nexlev no tiene datos de árabe, hindi, japonés, coreano ni turco en el feed de outliers; la lista B NO cubre esos idiomas."
+  ],
+  "lista_A": [
+    {
+      "nombre": "Documentales sociales de EE. UU. ('America's Motel Families', pobreza oculta, ganadores de lotería)",
+      "idioma": "inglés",
+      "veredicto": "Pasa los 5 filtros. Competencia baja.",
+      "canales": [
+        {
+          "nombre": "Stateside Stories | Tales of America",
+          "url": "https://www.youtube.com/channel/UCfNMaCk38ESUA3kcadq-m2w",
+          "subs": 22400,
+          "creado": "2026-07-16",
+          "primer_video": "2026-08-19",
+          "rpm": 8.3,
+          "ingresos_mes_est": 22824,
+          "visitas_mes": 2737199,
+          "videos": 35,
+          "subidas_semana": 3,
+          "media_vistas": 184296,
+          "mediana_vistas": 46000,
+          "faceless": "sí (97%)",
+          "monetizado": "sí",
+          "top": [
+            ["America's Motel Families: Life on the Edge", 1700000],
+            ["Inside America's Hidden Poverty Crisis: From Appalachia To LA", 1200000],
+            ["America's Lottery Millionaires: What Happens When You Win Big?", 1100000],
+            ["America Without Limits: Guns, Food and Extreme Living", 317000],
+            ["America's Kids Behind Bars: Inside America's Juvenile Prisons", 293000],
+            ["Million-Dollar RVs: Inside America's Largest Motorhome Rally", 237000],
+            ["Is This Tough Love or Torture? Inside America's Strictest Teen Boot Camp", 231000],
+            ["The Americans Working Full-Time and Still Broke", 169000]
+          ]
+        }
+      ],
+      "competidores": "3-4 con tracción: Finest Explainer (53,9K subs, ~776K vis/vídeo), Hidden America (11K, ~165K, RPM est. 1,6), The Jackpot Whisperer (23K, ~34K), FctryBuilt (8K, ~102K; no verifiqué su tema). Además ~15 microcanales sin tracción (<1K subs) que copian el formato 'America…'.",
+      "por_que": "12 de 12 vídeos leídos rinden >=4x los suscriptores y 8 de 12 >=10x: no es un vídeo suelto. Formato repetible ('Inside America's X'), 50-58 min, narración + material de archivo, sin cara. Hay una cola de microclones recién creados: la ventana se está cerrando.",
+      "riesgos": "La mediana (46K) es ~4x menor que la media: 3 vídeos de >1M tiran del canal. El canal figura con ubicación FR en Nexlev (operador fuera de EE. UU.). Los temas parecen reciclar reportajes de TV existentes: riesgo de contenido reutilizado/repetitivo en la política de monetización; guion y material propios necesarios."
+    },
+    {
+      "nombre": "Vídeos de sueño con gameplay ('Fall asleep while I sort/clean/build…')",
+      "idioma": "inglés",
+      "veredicto": "Pasa los 5 filtros, pero la competencia es media-baja y está creciendo (límite del criterio).",
+      "canales": [
+        {
+          "nombre": "Kindly Sleepin'",
+          "url": "https://www.youtube.com/channel/UCMV00wakJpu71g4DAA0c4hg",
+          "subs": 48600,
+          "creado": "2026-07-29",
+          "primer_video": "2026-08-19",
+          "rpm": 9.2,
+          "ingresos_mes_est": 18655,
+          "visitas_mes": 2026729,
+          "videos": 21,
+          "subidas_semana": 2,
+          "media_vistas": 164142,
+          "mediana_vistas": 81000,
+          "faceless": "sí (98%)",
+          "monetizado": "sí",
+          "top": [
+            ["Fall Asleep While I Literally Find A Needle In a Haystack", 825000],
+            ["Fall Asleep While I Sort 100% Of These Ducks", 541000],
+            ["Fall Asleep While I Clean Gross Carpets and Save The World...", 353000],
+            ["Fall Asleep While I Build A Waterpark", 288000],
+            ["Fall Asleep While I Mow Overgrown Lawns", 248000],
+            ["Fall Asleep While I Satisfyingly Clean Extremely Broken Game Consoles", 132000]
+          ]
+        },
+        {
+          "nombre": "Veeqal (RimWorld para dormir)",
+          "url": "https://www.youtube.com/channel/UCsJCvzf4YZQKvcfYJO2k1pg",
+          "subs": 2720,
+          "creado": "2025-10-16",
+          "primer_video": "2025-10-19",
+          "rpm": 10.8,
+          "ingresos_mes_est": 24,
+          "visitas_mes": 2230,
+          "videos": 9,
+          "subidas_semana": 0,
+          "media_vistas": 12888,
+          "mediana_vistas": 13000,
+          "faceless": "sí (98%)",
+          "monetizado": "sí",
+          "top": [["3 Hours of RimWorld to Fall Asleep To", 37000]]
+        }
+      ],
+      "competidores": "6-7 con tracción, todos de menos de 9 meses: DangerouslySleepy (101K subs, 301K de media, RPM est. 11,8; ya fuera del filtro de tamaño), Let's Get Miserable (39K, ~173K), Rizzoli (19K, ~123K), REMichael (3,3K, ~77K), dannykrumble (6K, ~25K), FonFon (18K, 269K, RPM 3,2). Más ~17 microcanales con <100 subs. Los competidores salen de 'canales similares' nivel 3; no revisé el contenido de cada uno.",
+      "por_que": "Kindly Sleepin' tiene 12 de 12 vídeos por encima de 1,3x sus suscriptores y 5 por encima de 5x (el mejor, 17x). Vídeos de 1-4 h, sin cara. Combina dos demandas ya probadas (sueño + juegos de simulación).",
+      "riesgos": "Requiere jugar y grabar de verdad (no se puede automatizar del todo) y voz humana. Kindly Sleepin' está a menos de 1.500 subs del tope de 50K y DangerouslySleepy ya lo superó: el formato ya está 'descubierto' y los clones aparecen cada semana. Parte del RPM de 9 viene de audiencia estadounidense."
+    }
+  ],
+  "lista_B": {
+    "entregables": [],
+    "nota": "Ningún vacío de mercado supera todos los filtros. Los formatos que triunfan en pt/it/de/fr y que probé ya existen en inglés y español con 25 canales o más cada uno (ver tabla de descartes). Árabe, hindi, japonés, coreano y turco no tienen datos en Nexlev.",
+    "casi_pasa": {
+      "nombre": "Vida cotidiana en la RDA / nostalgia de la Alemania del Este",
+      "idioma": "alemán",
+      "evidencia": [
+        ["Zeitreise der Erinnerungen", "https://www.youtube.com/channel/UCcdm116lljajoq7Npx6ONQg", 2070, "15 Dinge, die nur DDR Bürger kannten", 189868],
+        ["Generation-Damals", "https://www.youtube.com/channel/UCoi6jqHdZK_LiVgI3m_WW4w", 1870, "Einkaufen in den 70ern: Was wir damals wirklich zahlten", 351224],
+        ["Damals War Das Normal", "https://www.youtube.com/channel/UCt-AZRLVWT212jJj6bNZAiA", 898, "25 Dinge, die jedes deutsche Kind in den 1960ern nach der Schule tat", 147753]
+      ],
+      "competencia_en_es": "En las 20 mejores coincidencias en inglés y en español no aparece ningún canal centrado en la RDA; solo URSS (Meanwhile in the USSR, 2,6K subs; Inside Soviet Economy; Ecos de la URSS).",
+      "por_que_no_entrega": "RPM estimado de nostalgia/historia: 2-5 en inglés (máx. 9,8 en un canal) y 3-4 en alemán; no cumple el RPM>=8. No ejecuté check_faceless/monetización sobre estos canales. Tamaño de audiencia en inglés por validar."
+    }
+  },
+  "descartes": [
+    {"nicho": "Western / Lejano Oeste narrado", "motivo": "30 canales creados desde 2024 en la búsqueda; ~15 con tracción (Brave Old West 7,9K subs, 27,9x outlier, RPM 10,3, pero rodeado de clones).", "canales": 30},
+    {"nicho": "Romance Regency / duques narrado", "motivo": "30 canales; solo uno con outlier alto (Regency Love Stories, 8,5x). El resto 4-18K vis/vídeo: saturado de clones.", "canales": 30},
+    {"nicho": "Biblia/apócrifos para dormir", "motivo": "30 canales, incl. The Sleep Bible con 236K subs. Saturado.", "canales": 30},
+    {"nicho": "Celebridades 'antes y ahora' / nostalgia de estrellas", "motivo": "30 canales; RPM estimado 1-4 en la mayoría.", "canales": 30},
+    {"nicho": "Nostalgia infantil estadounidense ('25 forgotten things 1960s kids')", "motivo": "24 clones en la búsqueda (Lost American Childhood ya tiene 24 competidores).", "canales": 24},
+    {"nicho": "Historia animada / historia 'sin IA' para dormir", "motivo": "5+ canales con tracción (Animated History 97K subs; ya localizado en indonesio y ruso), RPM est. 2,5-2,9 salvo Serious History Compilations (10,7).", "canales": 5},
+    {"nicho": "Iceberg de anime (Nerd Dive)", "motivo": "Solo 3 de 8 vídeos de Nerd Dive rinden (472K, 248K, 165K; el resto 7K-34K) y hay 5+ canales de iceberg/lore con tracción (Nerdoki 40K subs, MonoMania, GrandLine Lore…).", "canales": 5},
+    {"nicho": "Radio de terror nocturna basada en películas (Realm Drifters)", "motivo": "~6 canales de terror/radio con tracción; Late Night Frights con RPM est. 4,7.", "canales": 6},
+    {"nicho": "Amish / comunidades plain", "motivo": "≥4 con tracción; RPM estimado 2-7.", "canales": 4},
+    {"nicho": "Rankings de marcas de supermercado 'de peor a mejor' (it/pt)", "motivo": "No es vacío: 25+ canales en inglés y 25 en español (Fraude en tu Despensa: 2,9K subs, 793K de media).", "canales": 50},
+    {"nicho": "'País 2050' / megaproyectos del futuro (pt)", "motivo": "No es vacío: States 2050 (83K subs) y 25 canales en inglés; MX 2050, México Punto Futuro y 20+ en español.", "canales": 50},
+    {"nicho": "Origen de apellidos (it)", "motivo": "No es vacío: 25 canales en inglés y 25 en español.", "canales": 50},
+    {"nicho": "Coches olvidados de un país (it)", "motivo": "No es vacío: 20 canales en inglés y 20 en español (AUTOSLEYENDA 6K subs, 127K de media).", "canales": 40},
+    {"nicho": "Ruta de trenes, infraestructura, prepping, longevidad, inmobiliario, inversión (categorías con pocos canales)", "motivo": "Con los filtros (faceless, <50K subs, RPM>=6) devuelven 0-3 canales y casi todos con canal antiguo o sin monetizar: huecos de etiquetado, no de mercado.", "canales": 0},
+    {"nicho": "Todo el español nativo", "motivo": "RPM estimado de 0,5-2,9 en casi todos los canales de la muestra (50 canales): ninguno cumple RPM>=3 con holgura, sea cual sea el nicho.", "canales": 0}
+  ],
+  "recomendacion": {
+    "nicho": "Documentales sociales de EE. UU. (formato 'America's [realidad oculta]: Inside…')",
+    "por_que": [
+      "Es el único con competencia baja real (3-4 canales con tracción) y 12/12 vídeos del canal líder por encima de 4x sus suscriptores.",
+      "Encaja con un flujo de narración + archivo/IA sin cara; no exige jugar ni grabar.",
+      "RPM estimado 8,3 y monetizado; el canal líder genera ~22.800 $/mes estimados con 2,7M visitas/mes."
+    ],
+    "primeros_pasos": "Antes de producir, ver 5 vídeos de Stateside Stories y 3 de Finest Explainer para fijar ángulo propio; el hueco son temas que no sean titulares recurrentes de TV (ej. 'motel families') y guion verificable. Probar con 3 vídeos de 45-55 min antes de comprometerse.",
+    "alternativa": "Si prefieres no depender de una sola estructura narrativa, el sueño con gameplay es la segunda opción, pero con competencia en alza."
+  }
+}
